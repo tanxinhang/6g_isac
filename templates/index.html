@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ISAC 文献综述可视化平台</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #f0f2f5;
+  --card-bg: #fff;
+  --primary: #1a73e8;
+  --text: #202124;
+  --text-secondary: #5f6368;
+  --border: #e0e0e0;
+  --shadow: 0 1px 3px rgba(0,0,0,0.08);
+  --radius: 12px;
+  --transition: 0.2s ease;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #1a237e 0%, #283593 40%, #3949ab 100%);
+  color: #fff;
+  padding: 28px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.header h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; }
+.header p { font-size: 14px; opacity: 0.85; }
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 0;
+  background: #fff;
+  padding: 0 40px;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 100px;
+  z-index: 99;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+.tab-btn {
+  padding: 14px 24px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 15px;
+  color: var(--text-secondary);
+  border-bottom: 3px solid transparent;
+  transition: var(--transition);
+  font-weight: 500;
+  white-space: nowrap;
+}
+.tab-btn:hover { color: var(--primary); background: #f8f9ff; }
+.tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); font-weight: 600; }
+
+/* Content */
+.content { max-width: 1400px; margin: 0 auto; padding: 24px 40px; }
+.tab-content { display: none; }
+.tab-content.active { display: block; animation: fadeIn 0.3s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Stats Cards */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.stat-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+.stat-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: translateY(-1px); }
+.stat-card .label { font-size: 13px; color: var(--text-secondary); margin-bottom: 6px; }
+.stat-card .value { font-size: 32px; font-weight: 700; color: var(--primary); }
+.stat-card .sub { font-size: 12px; color: var(--text-secondary); margin-top: 4px; }
+
+/* Chart containers */
+.chart-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.chart-row.single { grid-template-columns: 1fr; }
+.chart-row.three { grid-template-columns: 1fr 1fr 1fr; }
+.chart-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+.chart-card h3 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: var(--text);
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.chart-box { width: 100%; height: 360px; }
+.chart-box.large { height: 450px; }
+.chart-box.xl { height: 520px; }
+
+/* Search & Filter */
+.search-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.search-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: var(--transition);
+}
+.search-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(26,115,232,0.12); }
+.filter-select {
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+  background: #fff;
+  cursor: pointer;
+  min-width: 140px;
+}
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition);
+}
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: #1557b0; }
+.btn-outline { background: #fff; border: 1px solid var(--border); color: var(--text); }
+.btn-outline:hover { background: #f5f5f5; }
+
+/* Paper List */
+.paper-list { display: flex; flex-direction: column; gap: 10px; }
+.paper-item {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: var(--transition);
+  border-left: 4px solid var(--primary);
+}
+.paper-item:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
+.paper-item .title-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.paper-item .paper-title { font-size: 16px; font-weight: 600; color: var(--primary); flex: 1; }
+.paper-item .paper-meta { display: flex; gap: 16px; font-size: 13px; color: var(--text-secondary); flex-wrap: wrap; }
+.paper-item .tag {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.tag-high { background: #e8f5e9; color: #2e7d32; }
+.tag-medium { background: #fff8e1; color: #f57f17; }
+.tag-low { background: #ffebee; color: #c62828; }
+.tag-category { background: #e3f2fd; color: #1565c0; }
+.tag-innovation { background: #f3e5f5; color: #7b1fa2; }
+
+/* Paper Detail */
+.paper-detail {
+  display: none;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.paper-detail.open { display: block; }
+.paper-detail .detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.paper-detail .detail-item { margin-bottom: 8px; }
+.paper-detail .detail-label { font-size: 12px; color: var(--text-secondary); font-weight: 600; margin-bottom: 2px; }
+.paper-detail .detail-value { font-size: 14px; color: var(--text); }
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+.pagination button {
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: var(--transition);
+}
+.pagination button:hover { background: #f5f5f5; }
+.pagination button.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+.pagination .page-info { font-size: 14px; color: var(--text-secondary); padding: 0 12px; }
+
+/* Comparison Table */
+.table-wrapper {
+  overflow-x: auto;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  min-width: 1200px;
+}
+th {
+  background: #f8f9fa;
+  padding: 12px 14px;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid var(--border);
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+}
+td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #f0f0f0;
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+tr:hover td { background: #f8f9ff; }
+.table-filters { margin-bottom: 16px; display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* Loading */
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-secondary);
+}
+.loading::after {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .chart-row, .chart-row.three { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .header { padding: 20px; }
+  .content { padding: 16px; }
+  .tabs { padding: 0 16px; overflow-x: auto; }
+  .tab-btn { padding: 12px 16px; font-size: 13px; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📡 面向6G的通信感知一体化（ISAC）文献综述可视化平台</h1>
+  <p>411 篇论文 · 10 大研究方向 · AI 驱动的结构化分析</p>
+</div>
+
+<div class="tabs">
+  <button class="tab-btn active" data-tab="overview">📊 概览</button>
+  <button class="tab-btn" data-tab="explorer">🔍 论文检索</button>
+  <button class="tab-btn" data-tab="categories">📂 分类分析</button>
+  <button class="tab-btn" data-tab="trends">📈 趋势分析</button>
+  <button class="tab-btn" data-tab="comparison">📋 方法对比</button>
+</div>
+
+<div class="content">
+
+  <!-- ===== 概览 ===== -->
+  <div id="tab-overview" class="tab-content active">
+    <div class="stats-grid" id="stats-grid"></div>
+
+    <div class="chart-row">
+      <div class="chart-card">
+        <h3>研究方向分布</h3>
+        <div class="chart-box large" id="chart-category-pie"></div>
+      </div>
+      <div class="chart-card">
+        <h3>论文发表趋势 (月度)</h3>
+        <div class="chart-box large" id="chart-timeline"></div>
+      </div>
+    </div>
+
+    <div class="chart-row three">
+      <div class="chart-card">
+        <h3>置信度分布</h3>
+        <div class="chart-box" id="chart-confidence"></div>
+      </div>
+      <div class="chart-card">
+        <h3>创新类型分布</h3>
+        <div class="chart-box" id="chart-innovation"></div>
+      </div>
+      <div class="chart-card">
+        <h3>各类别研究热点词云</h3>
+        <div class="chart-box" id="chart-keywords"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 论文检索 ===== -->
+  <div id="tab-explorer" class="tab-content">
+    <div class="search-bar">
+      <input type="text" class="search-input" id="search-input" placeholder="搜索标题、作者、关键词...">
+      <select class="filter-select" id="filter-category"><option value="">全部方向</option></select>
+      <select class="filter-select" id="filter-confidence">
+        <option value="">全部置信度</option>
+        <option value="high">高</option>
+        <option value="medium">中</option>
+        <option value="low">低</option>
+      </select>
+      <select class="filter-select" id="filter-innovation"><option value="">全部创新类型</option></select>
+      <select class="filter-select" id="filter-sort">
+        <option value="date">按日期</option>
+        <option value="title">按标题</option>
+        <option value="confidence">按置信度</option>
+        <option value="category">按类别</option>
+      </select>
+      <button class="btn btn-primary" onclick="loadPapers(1)">搜索</button>
+      <button class="btn btn-outline" onclick="resetFilters()">重置</button>
+    </div>
+
+    <div class="paper-list" id="paper-list"></div>
+    <div class="pagination" id="pagination"></div>
+    <div id="explorer-loading" class="loading" style="display:none;">加载中</div>
+  </div>
+
+  <!-- ===== 分类分析 ===== -->
+  <div id="tab-categories" class="tab-content">
+    <div class="chart-row">
+      <div class="chart-card">
+        <h3>研究分类层级图</h3>
+        <div class="chart-box xl" id="chart-sunburst"></div>
+      </div>
+    </div>
+    <div id="category-detail" style="margin-top:16px;"></div>
+  </div>
+
+  <!-- ===== 趋势分析 ===== -->
+  <div id="tab-trends" class="tab-content">
+    <div class="chart-row">
+      <div class="chart-card">
+        <h3>研究方向月度趋势</h3>
+        <div class="chart-box xl" id="chart-category-timeline"></div>
+      </div>
+    </div>
+    <div class="chart-row">
+      <div class="chart-card">
+        <h3>研究热点关键词频率</h3>
+        <div class="chart-box large" id="chart-trend-keywords"></div>
+      </div>
+      <div class="chart-card">
+        <h3>创新类型随时间的演变</h3>
+        <div class="chart-box large" id="chart-innovation-timeline"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 方法对比 ===== -->
+  <div id="tab-comparison" class="tab-content">
+    <div class="table-filters">
+      <select class="filter-select" id="comp-filter-category" onchange="loadComparison()">
+        <option value="">全部方向</option>
+      </select>
+      <input type="text" class="search-input" id="comp-search" placeholder="搜索论文..." style="max-width:300px;" oninput="loadComparison()">
+    </div>
+    <div class="table-wrapper">
+      <table id="comparison-table">
+        <thead>
+          <tr>
+            <th>arXiv ID</th>
+            <th>论文标题</th>
+            <th>研究方向</th>
+            <th>研究问题</th>
+            <th>核心思想</th>
+            <th>方法</th>
+            <th>数据集/场景</th>
+            <th>评价指标</th>
+            <th>结果摘要</th>
+            <th>创新类型</th>
+            <th>局限性</th>
+            <th>置信度</th>
+            <th>发表日期</th>
+          </tr>
+        </thead>
+        <tbody id="comparison-tbody"></tbody>
+      </table>
+    </div>
+    <div class="pagination" id="comp-pagination"></div>
+  </div>
+
+</div>
+
+<script>
+// ===========================
+// 全局状态
+// ===========================
+let overview = null;
+let filters = null;
+let categoryStats = null;
+let currentPaperPage = 1;
+let compPage = 1;
+
+// ===========================
+// 标签切换
+// ===========================
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    onTabSwitch(btn.dataset.tab);
+  });
+});
+
+function onTabSwitch(tab) {
+  if (tab === 'overview' && !overview) initOverview();
+  else if (tab === 'explorer') initExplorer();
+  else if (tab === 'categories') initCategories();
+  else if (tab === 'trends') initTrends();
+  else if (tab === 'comparison') initComparison();
+}
+
+// ===========================
+// API 调用
+// ===========================
+async function fetchAPI(url) {
+  const r = await fetch(url);
+  return r.json();
+}
+
+// ===========================
+// 概览页
+// ===========================
+async function initOverview() {
+  overview = await fetchAPI('/api/overview');
+  filters = await fetchAPI('/api/filters');
+
+  // Stats
+  const stats = [
+    {label: '收录论文', value: overview.total_papers, sub: `时间: ${overview.date_range}`},
+    {label: '研究方向', value: overview.categories_count, sub: '10 个大方向覆盖'},
+    {label: '高置信度论文', value: overview.high_confidence, sub: '占 ' + (overview.high_confidence/overview.total_papers*100).toFixed(1) + '%'},
+    {label: '平均完整度', value: overview.avg_completeness + '%', sub: '11 个字段综合评分'},
+  ];
+  document.getElementById('stats-grid').innerHTML = stats.map(s =>
+    `<div class="stat-card"><div class="label">${s.label}</div><div class="value">${s.value}</div><div class="sub">${s.sub}</div></div>`
+  ).join('');
+
+  // Category pie
+  const catData = Object.entries(overview.categories);
+  const catChart = echarts.init(document.getElementById('chart-category-pie'));
+  catChart.setOption({
+    tooltip: { trigger: 'item', formatter: '{b}: {c} 篇 ({d}%)' },
+    legend: { type: 'scroll', orient: 'vertical', right: 10, top: 20, bottom: 20 },
+    series: [{
+      type: 'pie', radius: ['40%', '75%'], center: ['35%', '50%'],
+      itemStyle: { borderRadius: 6, borderColor: '#fff', borderWidth: 2 },
+      label: { show: false },
+      emphasis: { label: { show: true, fontSize: 14, fontWeight: 'bold' } },
+      data: catData.map(([k,v],i) => ({name: k, value: v, itemStyle: {color: ['#5470c6','#91cc75','#fac858','#ee6666','#73c0de','#3ba272','#fc8452','#9a60b4','#ea7ccc','#48b8d0'][i%10]}})),
+    }]
+  });
+
+  // Timeline
+  const months = Object.keys(overview.monthly);
+  const monthCounts = Object.values(overview.monthly);
+  const tlChart = echarts.init(document.getElementById('chart-timeline'));
+  tlChart.setOption({
+    tooltip: { trigger: 'axis' },
+    grid: { left: 50, right: 30, top: 20, bottom: 40 },
+    xAxis: { type: 'category', data: months, axisLabel: { rotate: 45, fontSize: 11 } },
+    yAxis: { type: 'value', name: '论文数' },
+    series: [{
+      type: 'bar', data: monthCounts,
+      itemStyle: { color: new echarts.graphic.LinearGradient(0,0,0,1,[
+        {offset:0, color:'#5470c6'}, {offset:1, color:'#91cc75'}
+      ]), borderRadius: [6,6,0,0] },
+      markLine: { data: [{ type: 'average', name: '均值' }], lineStyle: { type: 'dashed', color: '#ee6666' } }
+    }]
+  });
+
+  // Confidence donut
+  const confChart = echarts.init(document.getElementById('chart-confidence'));
+  confChart.setOption({
+    tooltip: { trigger: 'item' },
+    series: [{
+      type: 'pie', radius: ['50%', '75%'], center: ['50%', '50%'],
+      label: { formatter: '{b}\n{d}%' },
+      data: [
+        {value: overview.high_confidence, name: '高', itemStyle: {color: '#91cc75'}},
+        {value: overview.medium_confidence, name: '中', itemStyle: {color: '#fac858'}},
+        {value: overview.low_confidence, name: '低', itemStyle: {color: '#ee6666'}},
+      ].filter(d => d.value > 0),
+      itemStyle: { borderRadius: 4, borderColor: '#fff', borderWidth: 3 }
+    }]
+  });
+
+  // Innovation bar
+  const innoLabels = {
+    'novel_approach': '全新方法', 'theoretical_contribution': '理论贡献',
+    'unified_framework': '统一框架', 'integration': '融合整合',
+    'extension': '扩展延伸', 'incremental_improvement': '增量改进',
+    'benchmark_study': '基准研究', 'survey_or_review': '综述/调研'
+  };
+  const innoData = Object.entries(overview.innovation).map(([k,v]) => ({name: innoLabels[k]||k, value: v}));
+  const innoChart = echarts.init(document.getElementById('chart-innovation'));
+  innoChart.setOption({
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+    grid: { left: 120, right: 30, top: 10, bottom: 10 },
+    xAxis: { type: 'value' },
+    yAxis: { type: 'category', data: innoData.map(d => d.name), axisLabel: { fontSize: 12 }, inverse: true },
+    series: [{
+      type: 'bar', data: innoData.map(d => d.value),
+      itemStyle: { color: new echarts.graphic.LinearGradient(0,0,1,0,[
+        {offset:0, color:'#9a60b4'}, {offset:1, color:'#ea7ccc'}
+      ]), borderRadius: [0,6,6,0] },
+      label: { show: true, position: 'right' }
+    }]
+  });
+
+  // Keywords word cloud (as bar chart)
+  const kwChart = echarts.init(document.getElementById('chart-keywords'));
+  const topCats = Object.entries(overview.categories).slice(0, 6);
+  kwChart.setOption({
+    tooltip: { trigger: 'axis' },
+    grid: { left: 10, right: 30, top: 10, bottom: 10 },
+    radar: {
+      indicator: topCats.map(([name]) => ({ name: name.length > 6 ? name.slice(0,6)+'..' : name, max: overview.total_papers })),
+      center: ['50%','55%'], radius: '70%'
+    },
+    series: [{
+      type: 'radar',
+      data: [{ value: topCats.map(([,v]) => v), name: '论文数量分布', areaStyle: { color: 'rgba(84,112,198,0.2)' } }],
+    }]
+  });
+}
+
+// ===========================
+// 论文检索
+// ===========================
+async function initExplorer() {
+  if (!filters) filters = await fetchAPI('/api/filters');
+  const catSel = document.getElementById('filter-category');
+  catSel.innerHTML = '<option value="">全部方向</option>' + filters.categories.map(c =>
+    `<option value="${c.value}">${c.label}</option>`
+  ).join('');
+  const innoSel = document.getElementById('filter-innovation');
+  innoSel.innerHTML = '<option value="">全部创新类型</option>' + filters.innovations.map(i =>
+    `<option value="${i.value}">${i.label}</option>`
+  ).join('');
+  loadPapers(1);
+}
+
+async function loadPapers(page) {
+  currentPaperPage = page;
+  const params = new URLSearchParams({
+    page, per_page: 15,
+    search: document.getElementById('search-input').value,
+    category: document.getElementById('filter-category').value,
+    confidence: document.getElementById('filter-confidence').value,
+    innovation: document.getElementById('filter-innovation').value,
+    sort_by: document.getElementById('filter-sort').value,
+    sort_order: 'desc',
+  });
+  document.getElementById('explorer-loading').style.display = 'block';
+  const data = await fetchAPI('/api/cards?' + params);
+  document.getElementById('explorer-loading').style.display = 'none';
+
+  const innoLabels = {
+    'novel_approach': '全新方法', 'theoretical_contribution': '理论贡献',
+    'unified_framework': '统一框架', 'integration': '融合整合',
+    'extension': '扩展延伸', 'incremental_improvement': '增量改进',
+    'benchmark_study': '基准研究', 'survey_or_review': '综述/调研'
+  };
+  const catLabels = {};
+  filters.categories.forEach(c => catLabels[c.value] = c.label);
+
+  document.getElementById('paper-list').innerHTML = data.data.map((p, i) => `
+    <div class="paper-item" onclick="toggleDetail(${i})" style="border-left-color: ${['#5470c6','#91cc75','#fac858','#ee6666','#73c0de','#3ba272','#fc8452','#9a60b4','#ea7ccc','#48b8d0'][(data.data.indexOf(p))%10]}">
+      <div class="title-line">
+        <div class="paper-title">${p.title}</div>
+        <div style="display:flex;gap:6px;flex-shrink:0;">
+          <span class="tag tag-${p.confidence_level || 'low'}">${p.confidence_level || 'low'}</span>
+        </div>
+      </div>
+      <div class="paper-meta">
+        <span>📅 ${p.published_date || 'N/A'}</span>
+        <span class="tag tag-category">${catLabels[p.best_fit_category] || p.best_fit_category || '未分类'}</span>
+        <span class="tag tag-innovation">${innoLabels[p.innovation_type] || p.innovation_type || 'N/A'}</span>
+        <span>✍ ${(p.authors||[]).slice(0,3).join(', ')}${(p.authors||[]).length > 3 ? ' 等' : ''}</span>
+        <span>🏷 ${p.primary_category || ''}</span>
+      </div>
+      <div class="paper-detail" id="detail-${i}">
+        <div class="detail-grid">
+          <div class="detail-item"><div class="detail-label">研究问题</div><div class="detail-value">${truncate(p.problem, 200)}</div></div>
+          <div class="detail-item"><div class="detail-label">核心思想</div><div class="detail-value">${truncate(p.key_idea, 200)}</div></div>
+          <div class="detail-item"><div class="detail-label">方法</div><div class="detail-value">${truncate(p.method, 250)}</div></div>
+          <div class="detail-item"><div class="detail-label">数据集/场景</div><div class="detail-value">${truncate(p.dataset_or_scenario, 150)}</div></div>
+          <div class="detail-item"><div class="detail-label">评价指标</div><div class="detail-value">${truncate(p.metrics, 150)}</div></div>
+          <div class="detail-item"><div class="detail-label">结果摘要</div><div class="detail-value">${truncate(p.results_summary, 200)}</div></div>
+          <div class="detail-item"><div class="detail-label">局限性</div><div class="detail-value">${truncate(p.limitations, 150)}</div></div>
+          <div class="detail-item"><div class="detail-label">arXiv ID</div><div class="detail-value"><a href="https://arxiv.org/abs/${p.arxiv_id}" target="_blank" style="color:var(--primary)">${p.arxiv_id}</a></div></div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  // Pagination
+  let pagHTML = `<button ${page<=1?'disabled':''} onclick="loadPapers(${page-1})">上一页</button>`;
+  for (let p = 1; p <= data.total_pages; p++) {
+    if (p === 1 || p === data.total_pages || Math.abs(p - page) <= 2) {
+      pagHTML += `<button class="${p===page?'active':''}" onclick="loadPapers(${p})">${p}</button>`;
+    } else if (Math.abs(p - page) === 3) {
+      pagHTML += `<span class="page-info">...</span>`;
+    }
+  }
+  pagHTML += `<button ${page>=data.total_pages?'disabled':''} onclick="loadPapers(${page+1})">下一页</button>`;
+  pagHTML += `<span class="page-info">共 ${data.total} 条</span>`;
+  document.getElementById('pagination').innerHTML = pagHTML;
+}
+
+function toggleDetail(i) {
+  document.getElementById('detail-' + i).classList.toggle('open');
+}
+
+function resetFilters() {
+  document.getElementById('search-input').value = '';
+  document.getElementById('filter-category').value = '';
+  document.getElementById('filter-confidence').value = '';
+  document.getElementById('filter-innovation').value = '';
+  loadPapers(1);
+}
+
+function truncate(str, len) {
+  if (!str) return '[未提取]';
+  return str.length > len ? str.slice(0, len) + '...' : str;
+}
+
+// ===========================
+// 分类分析
+// ===========================
+async function initCategories() {
+  categoryStats = await fetchAPI('/api/categories');
+  const catEntries = Object.entries(categoryStats);
+
+  // Sunburst
+  const sunData = [{
+    name: 'ISAC 研究',
+    itemStyle: { color: '#1a237e' },
+    children: catEntries.map(([label, info], i) => ({
+      name: label,
+      value: info.count,
+      itemStyle: { color: ['#5470c6','#91cc75','#fac858','#ee6666','#73c0de','#3ba272','#fc8452','#9a60b4','#ea7ccc','#48b8d0'][i%10] },
+      children: Object.entries(info.innovation).map(([ik, iv]) => ({
+        name: ik, value: iv,
+      })).filter(c => c.value > 0),
+    })),
+  }];
+  const sunChart = echarts.init(document.getElementById('chart-sunburst'));
+  sunChart.setOption({
+    tooltip: { trigger: 'item', formatter: '{b}: {c} 篇' },
+    series: [{
+      type: 'sunburst', data: sunData, radius: [0, '90%'],
+      label: { rotate: 'radial', fontSize: 11 },
+      itemStyle: { borderRadius: 4, borderWidth: 2 },
+      levels: [
+        {},
+        { r0: '15%', r: '45%', label: { fontSize: 13 } },
+        { r0: '45%', r: '72%', label: { fontSize: 10 } },
+      ]
+    }]
+  });
+
+  // Category detail cards
+  const detailHTML = catEntries.map(([label, info], i) => `
+    <div class="chart-card" style="margin-bottom:12px; cursor:pointer;" onclick="this.querySelector('.cat-detail-body').classList.toggle('open')">
+      <h3 style="margin-bottom:8px;">
+        <span style="display:inline-block;width:14px;height:14px;border-radius:3px;background:${['#5470c6','#91cc75','#fac858','#ee6666','#73c0de','#3ba272','#fc8452','#9a60b4','#ea7ccc','#48b8d0'][i%10]};margin-right:8px;vertical-align:middle;"></span>
+        ${label} <span style="font-weight:400;color:var(--text-secondary);font-size:14px;">(${info.count} 篇)</span>
+        <span style="float:right;font-size:12px;color:var(--text-secondary);">
+          高:${info.confidence.high||0} | 中:${info.confidence.medium||0} | 低:${info.confidence.low||0}
+        </span>
+      </h3>
+      <div class="cat-detail-body" style="display:none;">
+        <div style="margin-bottom:10px;">
+          <strong style="font-size:13px;">创新类型分布:</strong>
+          ${Object.entries(info.innovation).map(([ik,iv]) => `<span style="margin-left:8px;font-size:13px;">${ik}: ${iv}</span>`).join('')}
+        </div>
+        <div><strong style="font-size:13px;">代表性论文:</strong></div>
+        ${(info.top_papers||[]).map(p => `
+          <div style="padding:8px 0;border-bottom:1px solid #f0f0f0;font-size:13px;">
+            <div style="color:var(--primary);cursor:pointer;" onclick="event.stopPropagation();window.open('https://arxiv.org/abs/${p.arxiv_id}')">${p.title}</div>
+            <div style="color:var(--text-secondary);margin-top:2px;">${truncate(p.key_idea||p.method, 150)}</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+  document.getElementById('category-detail').innerHTML = detailHTML;
+}
+
+// ===========================
+// 趋势分析
+// ===========================
+async function initTrends() {
+  const trends = await fetchAPI('/api/trends');
+  const timelinedata = trends.category_timeline;
+
+  // Category timeline stacked area
+  const months = Object.keys(timelinedata);
+  const allCats = new Set();
+  months.forEach(m => Object.keys(timelinedata[m]).forEach(c => allCats.add(c)));
+  const catList = [...allCats];
+  const colors = ['#5470c6','#91cc75','#fac858','#ee6666','#73c0de','#3ba272','#fc8452','#9a60b4','#ea7ccc','#48b8d0'];
+
+  const ctChart = echarts.init(document.getElementById('chart-category-timeline'));
+  ctChart.setOption({
+    tooltip: { trigger: 'axis' },
+    legend: { type: 'scroll', bottom: 0 },
+    grid: { left: 50, right: 30, top: 20, bottom: 60 },
+    xAxis: { type: 'category', data: months, axisLabel: { rotate: 45, fontSize: 10 } },
+    yAxis: { type: 'value', name: '论文数' },
+    series: catList.map((cat, i) => ({
+      name: cat, type: 'line', stack: 'Total',
+      areaStyle: { opacity: 0.3 },
+      data: months.map(m => timelinedata[m][cat] || 0),
+      itemStyle: { color: colors[i%colors.length] },
+      emphasis: { focus: 'series' },
+      smooth: true,
+    })),
+  });
+
+  // Trend keywords bar
+  const kwEntries = Object.entries(trends.keywords);
+  const kwChart = echarts.init(document.getElementById('chart-trend-keywords'));
+  kwChart.setOption({
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+    grid: { left: 160, right: 30, top: 10, bottom: 10 },
+    xAxis: { type: 'value' },
+    yAxis: { type: 'category', data: kwEntries.map(([k]) => k), axisLabel: { fontSize: 11 }, inverse: true },
+    series: [{
+      type: 'bar', data: kwEntries.map(([,v]) => v),
+      itemStyle: {
+        color: function(p) {
+          const c = ['#5470c6','#5b7fd6','#6a8ee6','#799ef6','#88aeff'];
+          return c[Math.min(p.dataIndex, 4)];
+        },
+        borderRadius: [0,6,6,0]
+      },
+      label: { show: true, position: 'right' }
+    }]
+  });
+
+  // Innovation timeline (simplified: group by year)
+  if (!overview) overview = await fetchAPI('/api/overview');
+  const innoLabels = {
+    'novel_approach': '全新方法', 'theoretical_contribution': '理论贡献',
+    'unified_framework': '统一框架', 'integration': '融合整合',
+    'extension': '扩展延伸', 'incremental_improvement': '增量改进',
+    'benchmark_study': '基准研究', 'survey_or_review': '综述/调研'
+  };
+  const innoTLChart = echarts.init(document.getElementById('chart-innovation-timeline'));
+  innoTLChart.setOption({
+    tooltip: { trigger: 'item' },
+    legend: { type: 'scroll', bottom: 0 },
+    series: [{
+      type: 'pie', radius: ['35%', '75%'], center: ['50%', '45%'],
+      roseType: 'area',
+      itemStyle: { borderRadius: 6 },
+      data: Object.entries(overview.innovation).map(([k,v]) => ({
+        name: innoLabels[k]||k, value: v,
+      })),
+    }]
+  });
+}
+
+// ===========================
+// 方法对比
+// ===========================
+async function initComparison() {
+  if (!filters) filters = await fetchAPI('/api/filters');
+  const sel = document.getElementById('comp-filter-category');
+  sel.innerHTML = '<option value="">全部方向</option>' + filters.categories.map(c =>
+    `<option value="${c.value}">${c.label}</option>`
+  ).join('');
+  loadComparison();
+}
+
+async function loadComparison(page = 1) {
+  compPage = page;
+  const params = new URLSearchParams({
+    page, per_page: 50,
+    search: document.getElementById('comp-search').value,
+    category: document.getElementById('comp-filter-category').value,
+    sort_by: 'date',
+    sort_order: 'desc',
+  });
+  const data = await fetchAPI('/api/cards?' + params);
+  const innoLabels = {
+    'novel_approach': '全新方法', 'theoretical_contribution': '理论贡献',
+    'unified_framework': '统一框架', 'integration': '融合整合',
+    'extension': '扩展延伸', 'incremental_improvement': '增量改进',
+    'benchmark_study': '基准研究', 'survey_or_review': '综述/调研'
+  };
+  const catLabels = {};
+  filters.categories.forEach(c => catLabels[c.value] = c.label);
+
+  document.getElementById('comparison-tbody').innerHTML = data.data.map(p => `
+    <tr>
+      <td><a href="https://arxiv.org/abs/${p.arxiv_id}" target="_blank" style="color:var(--primary);font-size:12px;">${p.arxiv_id}</a></td>
+      <td title="${p.title}">${truncate(p.title, 60)}</td>
+      <td>${catLabels[p.best_fit_category] || p.best_fit_category || 'N/A'}</td>
+      <td title="${p.problem||''}">${truncate(p.problem, 80)}</td>
+      <td title="${p.key_idea||''}">${truncate(p.key_idea, 80)}</td>
+      <td title="${p.method||''}">${truncate(p.method, 80)}</td>
+      <td title="${p.dataset_or_scenario||''}">${truncate(p.dataset_or_scenario, 60)}</td>
+      <td title="${p.metrics||''}">${truncate(p.metrics, 60)}</td>
+      <td title="${p.results_summary||''}">${truncate(p.results_summary, 80)}</td>
+      <td>${innoLabels[p.innovation_type]||p.innovation_type||'N/A'}</td>
+      <td title="${p.limitations||''}">${truncate(p.limitations, 60)}</td>
+      <td><span class="tag tag-${p.confidence_level||'low'}">${p.confidence_level||'low'}</span></td>
+      <td>${p.published_date||''}</td>
+    </tr>
+  `).join('');
+
+  let pagHTML = `<button ${page<=1?'disabled':''} onclick="loadComparison(${page-1})">上一页</button>`;
+  pagHTML += `<span class="page-info">第 ${page} / ${data.total_pages} 页，共 ${data.total} 条</span>`;
+  pagHTML += `<button ${page>=data.total_pages?'disabled':''} onclick="loadComparison(${page+1})">下一页</button>`;
+  document.getElementById('comp-pagination').innerHTML = pagHTML;
+}
+
+// ===========================
+// 初始化
+// ===========================
+initOverview();
+
+// 响应式图表
+window.addEventListener('resize', () => {
+  ['chart-category-pie','chart-timeline','chart-confidence','chart-innovation','chart-keywords',
+   'chart-sunburst','chart-category-timeline','chart-trend-keywords','chart-innovation-timeline'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      const instance = echarts.getInstanceByDom(el);
+      if (instance) instance.resize();
+    }
+  });
+});
+</script>
+
+</body>
+</html>
