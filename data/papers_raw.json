@@ -1,5 +1,66 @@
 [
   {
+    "arxiv_id": "2608.21064",
+    "title": "Privacy-Preserving Localization via Transmit Antenna Selection and Permutation",
+    "authors": [
+      "Yiyang Zhang",
+      "Yanmo Hu",
+      "Junyuan Gao",
+      "Shuowen Zhang",
+      "Jiannong Cao",
+      "Liang Liu"
+    ],
+    "abstract": "Integrated sensing and communication (ISAC) has been identified as one primary usage scenario in the sixth-generation (6G) network. While techniques to preserve information privacy, such as cryptography, have been widely investigated, how to preserve sensing privacy is still an open problem in the literature. This paper makes an early attempt to tackle the above issue. Specifically, we consider a localization system consisting of a multi-antenna transmitter, termed Alice, a single-antenna legitimate receiver, termed Bob, and a single-antenna illegitimate receiver, termed Eve. To allow Bob to estimate Alice's angle-of-departure (AOD) but prevent Eve from performing this task based on Alice's signals, this paper proposes a novel antenna selection and permutation based transmission strategy for Alice. Under this scheme, Alice carefully selects a subset of antennas and permutes their indices to establish a specific pilot-antenna mapping for transmission. Similar to cryptography for information privacy, such a mapping will serve as the secret key to preserve localization privacy. In the special case without noise at Bob and Eve, we manage to find out all the antenna selection and permutation solutions such that with this key (knowledge about the exact pilot-antenna mapping), Bob can uniquely estimate Alice's AOD, while without this key, Eve can estimate multiple AODs of Alice that can lead to its received signals. In the noisy case, numerical results are provided to show that our scheme can confuse Eve to make inaccurate AOD estimation as well.",
+    "published_date": "2026-08-21",
+    "updated_date": "2026-08-21",
+    "primary_category": "eess.SP",
+    "categories": [
+      "eess.SP",
+      "cs.IT"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2608.21064v1",
+    "comment": ""
+  },
+  {
+    "arxiv_id": "2608.21050",
+    "title": "UW-OCDM for Low-Altitude UAV Communication and Cooperative Sensing",
+    "authors": [
+      "Yi Tao",
+      "Zhen Gao",
+      "Ziwei Wan",
+      "Yuezu Lv",
+      "Hua Wang",
+      "Kaibin Huang",
+      "Sheng Chen"
+    ],
+    "abstract": "Integrated sensing and communications (ISAC) is a key enabler for uncrewed aerial vehicles (UAVs) in the low-altitude economy. This paper proposes an ISAC waveform that embeds a unique word (UW) into orthogonal chirp division multiplexing (OCDM), termed UW-OCDM, together with corresponding communication reception and cooperative sensing schemes for high-mobility UAV scenarios. For communication, the embedded UW enables timing synchronization and Doppler estimation and compensation without requiring a separate synchronization sequence. A sparse spatio-temporal channel estimation method exploits the common channel support across multiple receive antennas and consecutive UW observations to support reliable data demodulation. For sensing, the deterministic UW serves as a shared prior that allows distributed base stations to construct sensing dictionaries locally without exchanging random payload symbols in real time. A hierarchical multi-target detection and tracking algorithm integrates direct-path interference suppression, kinematic prediction, multi-candidate screening, off-grid refinement, residual verification, and successive interference cancellation for robust localization with reduced search complexity. Simulation results demonstrate reliable communication and localization in highly dynamic UAV scenarios, while the proposed framework retains low-complexity frequency-domain equalization and reduces transmit-reference sharing overhead and multi-static localization complexity.",
+    "published_date": "2026-08-21",
+    "updated_date": "2026-08-21",
+    "primary_category": "eess.SP",
+    "categories": [
+      "eess.SP"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2608.21050v1",
+    "comment": "Manuscript with 22 figures"
+  },
+  {
+    "arxiv_id": "2608.20731",
+    "title": "Dispersion-aware Localization Network for Wideband OFDM Pinching-Antenna Integrated Sensing and Communication Systems",
+    "authors": [
+      "Hyeonho Noh",
+      "Hyun Jong Yang"
+    ],
+    "abstract": "Pinching-antenna systems (PASS) provide a large effective aperture and substantial path-loss reduction at low hardware cost, making them attractive for integrated sensing and communication (ISAC). Under wideband OFDM operation, however, the antennas on each waveguide impose nonlinear, position-dependent group delays on the same baseband signal, giving rise to waveguide dispersion that severely degrades range estimation. To this end, this paper proposes a two-stage ISAC framework comprising communication-aware beamforming and antenna placement followed by a dispersion-aware target localization stage. A fractional-programming beamformer and an element-wise coordinate-descent placement jointly maximize the downlink sum rate under a sensing beampattern-gain constraint, and the resulting optimized beamformer and placement determine the effective sensing channel used by the localization stage. The proposed DisPersion-aware Localization Network (DiPL-Net) detects targets from the received signal via a dispersion-aware score map built on a physics-derived range dictionary. Its convolutional backbone employs dual-kernel residual blocks, each pairing a short kernel matched to the OFDM main lobe with a long kernel matched to the dispersion tail, so as to deconvolve the dispersion and restore a sharp target peak at each true target. Simulation results show substantial localization gains over various sensing baselines while preserving the achievable communication rate.",
+    "published_date": "2026-08-21",
+    "updated_date": "2026-08-21",
+    "primary_category": "eess.SP",
+    "categories": [
+      "eess.SP"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2608.20731v1",
+    "comment": ""
+  },
+  {
     "arxiv_id": "2608.20278",
     "title": "Secrecy Rate Maximization for UAV-Mounted Six-Dimensional Movable IRS-Assisted ISAC Systems",
     "authors": [
@@ -96,19 +157,19 @@
   },
   {
     "arxiv_id": "2608.18587",
-    "title": "Toward S^2C^2I-Integrated High-Altitude Platforms: Architectures, Cross-Functional Design, Evaluation, and Deployment Perspectives",
+    "title": "High-Altitude Platforms Beyond Connectivity: A Survey of Integrated Sensing, Storage, Communication, Computing, and Intelligence",
     "authors": [
       "Haoxiang Luo",
       "Mohamed-Slim Alouini"
     ],
     "abstract": "High-altitude platforms (HAPs) are emerging as persistent middle-layer infrastructures for space-air-ground integrated networks (SAGINs), offering a favorable compromise among coverage, latency, endurance, and deployment flexibility. Their role, however, is evolving beyond communication relaying toward the joint provision of sensing, storage, communication, computing, and intelligence (S^2C^2I). This survey presents a unified HAP-centric perspective on S^2C^2I integration. We first review HAP fundamentals, platform categories, and their principal roles in SAGINs, including wide-area access, relaying, backhaul, edge service, low-altitude aerial coordination, and cross-layer orchestration. We then develop an integrated architecture spanning multi-plane connectivity, payload functional splits, and a cloud-edge-HAP space continuum with hierarchical data, control, computing, and storage loops. The enabling technologies are systematically examined, covering heterogeneous RF, millimeter-wave, terahertz, free-space optical, and hybrid links; sensing payloads and integrated sensing and communication; onboard computing; storage and caching; and AI-based orchestration. We further synthesize standardization progress, open software and datasets, testbeds, field evidence, and a four-level evaluation methodology ranging from component validation to mission-level effectiveness. An emergency-response case study demonstrates that joint S^2C^2I orchestration substantially improves conjunctive service availability while reducing feeder-link traffic. Finally, we identify research opportunities in agentic AI, trustworthy autonomy, goal-oriented semantic operation and digital twins, and sustainable, certifiable, and open HAP-native systems. The resulting synthesis provides a coherent roadmap from platform design to network-wide deployment.",
     "published_date": "2026-08-19",
-    "updated_date": "2026-08-19",
+    "updated_date": "2026-08-21",
     "primary_category": "eess.SY",
     "categories": [
       "eess.SY"
     ],
-    "pdf_url": "https://arxiv.org/pdf/2608.18587v1",
+    "pdf_url": "https://arxiv.org/pdf/2608.18587v2",
     "comment": ""
   },
   {
@@ -5732,27 +5793,6 @@
     "comment": "This paper appears in: IEEE Wireless Communications https://ieeexplore.ieee.org/document/11273187"
   },
   {
-    "arxiv_id": "2506.06942",
-    "title": "Conditional Denoising Diffusion for ISAC Enhanced Channel Estimation in Cell-Free 6G",
-    "authors": [
-      "Mohammad Farzanullah",
-      "Han Zhang",
-      "Akram Bin Sediq",
-      "Ali Afana",
-      "Melike Erol-Kantarci"
-    ],
-    "abstract": "Cell-free Integrated Sensing and Communication (ISAC) aims to revolutionize 6th Generation (6G) networks. By combining distributed access points with ISAC capabilities, it boosts spectral efficiency, situational awareness, and communication reliability. Channel estimation is a critical step in cell-free ISAC systems to ensure reliable communication, but its performance is usually limited by challenges such as pilot contamination and noisy channel estimates. This paper presents a novel framework leveraging sensing information as a key input within a Conditional Denoising Diffusion Model (CDDM). In this framework, we integrate CDDM with a Multimodal Transformer (MMT) to enhance channel estimation in ISAC-enabled cell-free systems. The MMT encoder effectively captures inter-modal relationships between sensing and location data, enabling the CDDM to iteratively denoise and refine channel estimates. Simulation results demonstrate that the proposed approach achieves significant performance gains. As compared with Least Squares (LS) and Minimum Mean Squared Error (MMSE) estimators, the proposed model achieves normalized mean squared error (NMSE) improvements of 8 dB and 9 dB, respectively. Moreover, we achieve a 27.8% NMSE improvement compared to the traditional denoising diffusion model (TDDM), which does not incorporate sensing channel information. Additionally, the model exhibits higher robustness against pilot contamination and maintains high accuracy under challenging conditions, such as low signal-to-noise ratios (SNRs). According to the simulation results, the model performs well for users near sensing targets by leveraging the correlation between sensing and communication channels.",
-    "published_date": "2025-06-07",
-    "updated_date": "2025-06-07",
-    "primary_category": "eess.SP",
-    "categories": [
-      "eess.SP",
-      "cs.LG"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2506.06942v1",
-    "comment": "IEEE PIMRC conference, 6 pages, 6 figures"
-  },
-  {
     "arxiv_id": "2607.21418",
     "title": "Constellation Selection and Power Allocation for Multi-Cell OFDM-ISAC: Managing Inter-Cell Interference and Sensing Sidelobes",
     "authors": [
@@ -6101,27 +6141,6 @@
     ],
     "pdf_url": "https://arxiv.org/pdf/2604.10807v1",
     "comment": ""
-  },
-  {
-    "arxiv_id": "2603.23093",
-    "title": "Extended-Target Classification and Localization for Near-Field ISAC",
-    "authors": [
-      "Zongyao Zhao",
-      "Zhaolin Wang",
-      "Lincong Han",
-      "Jing Jin",
-      "Yuanwei Liu",
-      "Kaibin Huang"
-    ],
-    "abstract": "Near-field integrated sensing and communication (ISAC) enables object-level sensing from distance-dependent array responses, yet most existing near-field methods still rely on point-target models and realistic extended targets remain largely unexplored. In this paper, joint target classification and range-azimuth localization are studied from channel responses of realistic extended targets. A dual-branch inference framework is proposed. Semantic and geometric branches are used for classification and localization, respectively. Cross-task attention is introduced after task-specific encoding so that complementary cues can be exchanged without forcing full feature sharing from the input stage. To improve localization on the same backbone, uncertainty-aware regression and a physics-guided structured objective are adopted, including planar consistency, peak-response regularization, and geometry-coupling constraints. Training and evaluation data are generated from full-wave electromagnetic scattering simulations of voxelized vehicle targets with randomized heading angles, material contrasts, and placements. The compared variants show that cross-task attention mainly benefits classification, while uncertainty-aware and structured supervision are needed to recover strong localization performance on the same backbone. Under the adopted shared-OFDM benchmark, the proposed framework reaches the best joint operating point with fewer sensing tones for the same target performance region.",
-    "published_date": "2026-03-24",
-    "updated_date": "2026-03-24",
-    "primary_category": "eess.SP",
-    "categories": [
-      "eess.SP"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2603.23093v1",
-    "comment": "13 pages, 10 figures"
   },
   {
     "arxiv_id": "2607.16507",
@@ -6668,27 +6687,6 @@
     ],
     "pdf_url": "https://arxiv.org/pdf/2606.20413v1",
     "comment": "6 pages"
-  },
-  {
-    "arxiv_id": "2606.13582",
-    "title": "Max-Min Secrecy Rate Optimization for Secure ISAC Networks: Global Optimization and Low-Complexity Algorithm",
-    "authors": [
-      "Thanh-Nha To",
-      "Trung Quang Pham",
-      "Dang Y Hoang",
-      "Hoang-Lai Pham",
-      "Tuan Anh Pham"
-    ],
-    "abstract": "In this paper, we investigate a secure integrated sensing and communication (ISAC) system in which multiple communication users (CUs) coexist with multiple untrusted sensing users (SUs) that may eavesdrop on the confidential information intended for the CUs. To promote security fairness among users, we formulate a max-min secrecy rate optimization problem subject to a transmit power budget and sensing quality requirements characterized by beampattern matching error constraints. The resulting design problem is highly non-convex due to the secrecy rate expressions and non-convex sensing constraints. To address these challenges, we first reformulate the problem using semidefinite relaxation (SDR). Based on the reformulated problem, we develop a branch-and-bound (BB) framework combined with convex relaxations to obtain the globally optimal solution within a prescribed accuracy. To further reduce computational complexity, we propose a low-complexity algorithm based on successive convex approximation (SCA), which iteratively solves a sequence of convex subproblems and converges to a local solution. Numerical results demonstrate that the proposed BB algorithm achieves the global optimum and provides a benchmark for performance evaluation. Moreover, the proposed SCA-based algorithm attains near-optimal secrecy performance with significantly lower computational complexity, making it attractive for practical ISAC deployments.",
-    "published_date": "2026-06-11",
-    "updated_date": "2026-06-11",
-    "primary_category": "eess.SP",
-    "categories": [
-      "eess.SP",
-      "cs.IT"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2606.13582v1",
-    "comment": ""
   },
   {
     "arxiv_id": "2607.17655",
@@ -7256,6 +7254,27 @@
     "comment": ""
   },
   {
+    "arxiv_id": "2606.13582",
+    "title": "Max-Min Secrecy Rate Optimization for Secure ISAC Networks: Global Optimization and Low-Complexity Algorithm",
+    "authors": [
+      "Thanh-Nha To",
+      "Trung Quang Pham",
+      "Dang Y Hoang",
+      "Hoang-Lai Pham",
+      "Tuan Anh Pham"
+    ],
+    "abstract": "In this paper, we investigate a secure integrated sensing and communication (ISAC) system in which multiple communication users (CUs) coexist with multiple untrusted sensing users (SUs) that may eavesdrop on the confidential information intended for the CUs. To promote security fairness among users, we formulate a max-min secrecy rate optimization problem subject to a transmit power budget and sensing quality requirements characterized by beampattern matching error constraints. The resulting design problem is highly non-convex due to the secrecy rate expressions and non-convex sensing constraints. To address these challenges, we first reformulate the problem using semidefinite relaxation (SDR). Based on the reformulated problem, we develop a branch-and-bound (BB) framework combined with convex relaxations to obtain the globally optimal solution within a prescribed accuracy. To further reduce computational complexity, we propose a low-complexity algorithm based on successive convex approximation (SCA), which iteratively solves a sequence of convex subproblems and converges to a local solution. Numerical results demonstrate that the proposed BB algorithm achieves the global optimum and provides a benchmark for performance evaluation. Moreover, the proposed SCA-based algorithm attains near-optimal secrecy performance with significantly lower computational complexity, making it attractive for practical ISAC deployments.",
+    "published_date": "2026-06-11",
+    "updated_date": "2026-06-11",
+    "primary_category": "eess.SP",
+    "categories": [
+      "eess.SP",
+      "cs.IT"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.13582v1",
+    "comment": ""
+  },
+  {
     "arxiv_id": "2606.03960",
     "title": "SNF-PRP: A Covert Integrating Sensing and Communications Framework",
     "authors": [
@@ -7763,6 +7782,27 @@
     ],
     "pdf_url": "https://arxiv.org/pdf/2604.05991v2",
     "comment": ""
+  },
+  {
+    "arxiv_id": "2603.23093",
+    "title": "Extended-Target Classification and Localization for Near-Field ISAC",
+    "authors": [
+      "Zongyao Zhao",
+      "Zhaolin Wang",
+      "Lincong Han",
+      "Jing Jin",
+      "Yuanwei Liu",
+      "Kaibin Huang"
+    ],
+    "abstract": "Near-field integrated sensing and communication (ISAC) enables object-level sensing from distance-dependent array responses, yet most existing near-field methods still rely on point-target models and realistic extended targets remain largely unexplored. In this paper, joint target classification and range-azimuth localization are studied from channel responses of realistic extended targets. A dual-branch inference framework is proposed. Semantic and geometric branches are used for classification and localization, respectively. Cross-task attention is introduced after task-specific encoding so that complementary cues can be exchanged without forcing full feature sharing from the input stage. To improve localization on the same backbone, uncertainty-aware regression and a physics-guided structured objective are adopted, including planar consistency, peak-response regularization, and geometry-coupling constraints. Training and evaluation data are generated from full-wave electromagnetic scattering simulations of voxelized vehicle targets with randomized heading angles, material contrasts, and placements. The compared variants show that cross-task attention mainly benefits classification, while uncertainty-aware and structured supervision are needed to recover strong localization performance on the same backbone. Under the adopted shared-OFDM benchmark, the proposed framework reaches the best joint operating point with fewer sensing tones for the same target performance region.",
+    "published_date": "2026-03-24",
+    "updated_date": "2026-03-24",
+    "primary_category": "eess.SP",
+    "categories": [
+      "eess.SP"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2603.23093v1",
+    "comment": "13 pages, 10 figures"
   },
   {
     "arxiv_id": "2603.14829",
