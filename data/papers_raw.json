@@ -1,5 +1,286 @@
 [
   {
+    "arxiv_id": "2610.32953",
+    "title": "Low-Complexity Wideband Channel Estimation for ISAC in Analog Millimeter-Wave Systems",
+    "authors": [
+      "Hamza Touati",
+      "Raffaele Viterbo",
+      "Mattia Brambilla",
+      "Sandra Roger",
+      "Carmen Botella-Mascarell"
+    ],
+    "abstract": "Accurate wideband channel estimation is a key enabler for millimeter-wave (mmWave) integrated sensing and communication (ISAC) systems. In the narrowband scenario, the Transformed Spatial Domain Channel Estimation (TSDCE) method was previously shown to provide fast and accurate angle estimation with substantially lower complexity than conventional compressed-sensing approaches based on orthogonal matching pursuit (OMP). However, wideband ISAC scenarios additionally require delay estimation, making joint angle-delay sparse recovery computationally expensive due to the multidimensional dictionary search. In this paper, we propose a wideband extension of TSDCE, namely TSDCE-TD, which incorporates time-domain support and decouples angle and delay estimation. Two variations are proposed for delay estimation: TSDCE-TD (Dict), which uses a one-dimensional delay dictionary, and TSDCE-TD (FFT), which applies Fast Fourier Transform (FFT) zero-padding interpolation. Path estimates are iteratively refined through successive interference cancellation and alternating angle-delay updates. Simulation results show that the proposed methods outperform OMP-based baselines under practical dictionary sizes, while achieving comparable performance at high-resolution settings with substantially lower computational complexity. Moreover, the angle-delay estimates obtained using the proposed approach enable accurate single-anchor indoor localization in a ray-traced environment, achieving sub-20 cm positioning errors and satisfying practical indoor positioning requirements.",
+    "published_date": "2026-10-23",
+    "updated_date": "2026-10-23",
+    "primary_category": "eess.SP",
+    "categories": [
+      "eess.SP"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.32953v1",
+    "comment": "Accepted for publication in the 2026 IEEE 1st Annual Integrated Sensing and Communication Conference (ISAC)"
+  },
+  {
+    "arxiv_id": "2610.31136",
+    "title": "Array Rotation in Near-Field ISAC: Communication, Detection, and Estimation Under Low-Complexity Transmit Architectures",
+    "authors": [
+      "Marziyeh Soltani",
+      "Mark F. Flanagan"
+    ],
+    "abstract": "This paper studies near-field integrated sensing and communication (ISAC) with a rotatable base-station array under an exact spherical-wave propagation model. For a general transmit covariance, we derive a Cramér--Rao bound (CRB) decomposition that separates target-side geometry from transmit-covariance-dependent terms. We then specialize the framework to two representative low-complexity architectures: a single-stream superposition architecture, and a dual-waveform split architecture design. We characterize the communication-, detection-, and estimation-optimal rotations for each architecture using the exact finite-array model. In addition, we show how a second-order approximation yields compact approximate expressions for the optimal rotation angles. We also study uncertainty in the target state used for beamforming design through a correlated Gaussian perturbation model, and derive approximations of the optimal robust rotation angles for target sensing and detection. The analysis shows that the two architectures behave differently under rotation: the single-stream design can align communication and detection tasks, whereas the dual-waveform design exhibits a direct communication--detection tradeoff and can incur a larger communication loss when sensing is prioritized. Numerical results show clear gains over a fixed array orientation, especially for range estimation, and close agreement between the approximate and exact rotation choices. Detection is less affected by target-state errors than estimation in the considered cases.",
+    "published_date": "2026-10-22",
+    "updated_date": "2026-10-22",
+    "primary_category": "eess.SP",
+    "categories": [
+      "eess.SP",
+      "cs.IT"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.31136v1",
+    "comment": ""
+  },
+  {
+    "arxiv_id": "2610.31054",
+    "title": "Cross-Region Cooperation of UAV Swarms Towards Air-Ground ISAC via Hierarchical Multi-Agent Reinforcement Learning",
+    "authors": [
+      "Linghui Miao",
+      "Nhan Thanh Nguyen",
+      "Shijian Gao"
+    ],
+    "abstract": "The limited communication resources and sensing perspectives of a single uncrewed aerial vehicle (UAV) motivate UAV swarms for integrated sensing and communication (ISAC) in air-ground networks. However, in multi-region scenarios, regional UAV allocations may not match vehicle demand, while local observations may lack sufficient diversity for accurate sensing. To address these issues, this paper proposes a cross-region cooperation framework for UAV swarms. For communication, cross-region UAV reallocation reduces service disparities by matching resources to vehicle demand. For sensing, combining UAV observations from different regions increases observation diversity, while adaptive handshaking guided by marginal Cramér--Rao bound (CRB) utilities balances phase synchronization gains against handshaking energy consumption. Joint optimization of UAV positions and transmit power within each region then further improves communication service and sensing performance. These coupled decisions are coordinated by a hierarchical multi-agent reinforcement learning (H-MARL) approach through slow-timescale inter-region UAV reallocation and fast-timescale intra-region UAV control. Under the considered simulation settings, reallocation can improve quality of service (QoS) by over 20 percentage points compared with retaining the initial allocation under severe resource-demand mismatches. Cooperative sensing with adaptive handshaking incurs only about a 5.0% increase in mean CRB relative to perfect synchronization.",
+    "published_date": "2026-10-22",
+    "updated_date": "2026-10-22",
+    "primary_category": "eess.SY",
+    "categories": [
+      "eess.SY"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.31054v1",
+    "comment": "13 pages, 12 figures"
+  },
+  {
+    "arxiv_id": "2610.29364",
+    "title": "Precision Coexistence: Angular-Spectral Region Constrained Waveform Design for MIMO-ISAC",
+    "authors": [
+      "Syed Ali Haider Shirazi",
+      "Taejoon Kim",
+      "David J. Love",
+      "Sergiy A. Vorobyov"
+    ],
+    "abstract": "In this paper, we develop a dual-function waveform design framework for multiple-input multiple-output integrated sensing and communication (MIMO-ISAC) systems operating in congested electromagnetic environments. In such environments, the dual-function waveform must coexist with legacy systems, such as localized positioning sensors, maritime radar networks, and satellite communication links, that occupy specific frequency bands and angular sectors. To enable precision coexistence, we incorporate localized angular-spectral region constraints that suppress beamformed energy only within the angle-frequency regions occupied by each legacy system, while preserving the spatial degrees of freedom (DoFs) available outside those regions. The resulting waveform design problem is formulated as a nonconvex optimization problem and solved using a low-complexity majorization--minimization alternating direction method of multipliers (MM--ADMM) algorithm. Simulation results demonstrate that the proposed framework provides precise legacy-system protection while maintaining robust radar sensing and multi-user communication performance.",
+    "published_date": "2026-10-21",
+    "updated_date": "2026-10-21",
+    "primary_category": "cs.IT",
+    "categories": [
+      "cs.IT"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.29364v1",
+    "comment": "Paper accepted for presentation at IEEE Conference on Integrated Sensing and Communications 2026"
+  },
+  {
+    "arxiv_id": "2610.28309",
+    "title": "Generative Diffusion Models for Secure UAV-ISAC with Real-Time Target Tracking",
+    "authors": [
+      "Homa Nikbakht",
+      "Yonina C. Eldar",
+      "H. Vincent Poor"
+    ],
+    "abstract": "Unmanned aerial vehicle (UAV) platforms with integrated sensing and communication (ISAC) are prime candidates for surveillance missions, in which a dual-function drone tracks a mobile target and alerts a ground station when the target enters a protected region. Such alerts generate event-triggered communication traffic. By observing the change in the traffic, an eavesdropper (Eve) can therefore learn in real time whether the target is detected inside the protected region without decoding any message. Existing physical-layer security techniques protect the message content or hide that a transmission occurs, but the composition of the traffic remains exposed. We formulate the threat as traffic-composition covertness and propose a keyless diffusion-based transmission scheme that hides the triggered traffic. The scheme superposes the beamformed information streams of the UAV with a message-agnostic safeguard waveform generated by a conditional denoising diffusion implicit model. Training shapes the safeguard distribution such that triggered and non-triggered slots become statistically indistinguishable at Eve. The legitimate user shares no secret key with the UAV. We formulate the joint design as a rate maximization under covertness, reliability, and sensing constraints, with the sensing accuracy measured by the posterior Cramér-Rao bound (PCRB) of the beam-dependent tracking problem. Our numerical results show that, with multiple transmit antennas and an Eve signal-to-noise ratio (SNR) of $5$~dB, a learned Eve stays near the blind guess of $0.5$ for every safeguard beam split, a detector that knows the safeguard model reaches $0.71$ to $0.73$ inside Bob's main lobe and $0.53$ to $0.55$ outside it, while the average position PCRB varies only between $0.59$ and $0.70$~m$^2$.",
+    "published_date": "2026-10-20",
+    "updated_date": "2026-10-20",
+    "primary_category": "cs.IT",
+    "categories": [
+      "cs.IT"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.28309v1",
+    "comment": "This work has been submitted to the IEEE for possible publication"
+  },
+  {
+    "arxiv_id": "2610.27695",
+    "title": "Revolutionizing 6G Wireless Networks with RISs: Enhancements in Sensing and Communications",
+    "authors": [
+      "Jiguang He",
+      "Yuwen Cao",
+      "Charles Vanwynsberghe",
+      "Aymen Fakhreddine",
+      "Yi Fang",
+      "Chongwen Huang",
+      "George C. Alexandropoulos",
+      "Merouane Debbah"
+    ],
+    "abstract": "Reconfigurable intelligent surfaces (RISs) have emerged as one of the most promising technologies for the next-generation wireless networks, offering advantages such as cost efficiency, low power consumption, flexible deployment, and large effective aperture. Extensive studies have demonstrated the capabilities of RISs to enhance communication performance, including coverage extension, sum-rate improvement, interference suppression, security enhancement, etc. As 6G networks continue to evolve, wireless sensing is expected to play a pivotal role alongside communication. Undoubtedly, RISs possess great potential to enable seamless integration of sensing and communication by supporting both passive and active sensing paradigms. This paper explores how RISs can revolutionize wireless networks by enhancing both communication and sensing capabilities. Specifically, we highlight the fundamental principles, potential applications, and future trends of RIS-assisted integrated sensing and communication (ISAC), anticipating that RIS-enabled ISAC will become a key enabler in the upcoming 6G era.",
+    "published_date": "2026-10-20",
+    "updated_date": "2026-10-20",
+    "primary_category": "eess.SP",
+    "categories": [
+      "eess.SP"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.27695v1",
+    "comment": "7 pages, 6 figures, accepted by IEEE Communications Magazine"
+  },
+  {
+    "arxiv_id": "2610.26500",
+    "title": "Vision--RF Cooperative ISAC for Dynamic V2I Networks: Adaptive Beam Management and Semantic Clutter Suppression",
+    "authors": [
+      "Wenqi~Fan",
+      "Ning~Wei",
+      "Xiangyu Dong",
+      "Ahmad~Bazzi",
+      "Guan Gui",
+      "Rongyan~Xi",
+      "Huimin Tang",
+      "Yue~Xiu"
+    ],
+    "abstract": "We develop a vision--radio-frequency (RF) cooperative integrated sensing and communication (ISAC) framework that jointly uses visual priors and RF observations for transmit-side beam control and receiver-side clutter suppression. Within a narrowband snapshot model, visual target priors and historical RF detections guide control in dynamic vehicle-to-infrastructure networks with roadside clutter. In this framework, posterior angular uncertainty determines beam control and the selection between communication-for-sensing and sensing-for-sensing modes. To reduce sensing overhead while accommodating unreliable visual information, we develop a reliability-adaptive beam scanning scheme that allocates a bounded scan budget according to visual target probabilities and RF history, while reserving an adaptive fraction for exploration. At the receiver, visual geometry identifies clutter support, and RF observations estimate the corresponding complex reflection coefficients. Motion-aware residual filtering is then applied before angle--Doppler detection to suppress clutter while preserving slow-moving targets. Furthermore, communication and sensing power allocation is formulated as a per-direction linear program, subject to signal-to-interference-plus-noise ratio constraints evaluated at angles sampled from the posterior distribution and a total-power budget. Simulation results show that the proposed framework improves tracking over static and vision-only beam control and reduces sensing overhead relative to full scanning. The proposed scanning scheme also provides greater robustness to visual blockage than fixed-weight scanning, while the receiver better preserves slow-moving targets than temporal cancellation when visual target information is available.",
+    "published_date": "2026-10-19",
+    "updated_date": "2026-10-19",
+    "primary_category": "eess.SP",
+    "categories": [
+      "eess.SP"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.26500v1",
+    "comment": ""
+  },
+  {
+    "arxiv_id": "2610.26007",
+    "title": "Optical ISAC with Single-Photon Avalanche Diode (SPAD) Arrays",
+    "authors": [
+      "Vasilis K. Papanikolaou",
+      "Dimitris Bozanis",
+      "Ferdaous Tarhouni",
+      "George K. Karagiannidis",
+      "Christos Masouros",
+      "Robert Schober"
+    ],
+    "abstract": "Single-photon avalanche diode (SPAD) arrays offer photon-level sensitivity for sensing in optical integrated sensing and communication (O-ISAC). However, after each detection, a SPAD is blind for a dead time, which saturates the array at high received power. Existing O-ISAC analyses assume linear receivers and do not capture this effect. In this paper, we study ranging with a SPAD array in a monostatic O-ISAC system based on direct-current-biased optical orthogonal frequency-division multiplexing (DCO-OFDM). Sampling the array once per dead time, we model the number of pixels that detect a photon in each sampling interval as a binomial random variable whose success probability accounts for the intensity variation of the echo within a dead time. Based on this model, we derive the Cramér-Rao bound (CRB) for range estimation. We show that the SPAD count model of optical wireless communication, which assumes a constant photon rate over a dead time, causes a range bias that depends on the received power. Moreover, unlike for a linear photodiode, saturation degrades the ranging accuracy beyond a sensing-optimal transmit power. The rate-constrained operating point is then the larger of this power and the power needed for the target data rate. Numerical results validate the analysis against a continuous-time photon-counting simulation and show that the proposed model is needed for ranging.",
+    "published_date": "2026-10-19",
+    "updated_date": "2026-10-19",
+    "primary_category": "eess.SP",
+    "categories": [
+      "eess.SP"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.26007v1",
+    "comment": "5 pages, 4 figures, conference"
+  },
+  {
+    "arxiv_id": "2610.25307",
+    "title": "Queue-Aware ISAC Power Allocation Under Imperfect CSI: Integer-Service Analysis and Anchored Lyapunov Look-Ahead",
+    "authors": [
+      "Hanyi Sun",
+      "Yifan Zhou",
+      "Yixiao Gu"
+    ],
+    "abstract": "We study power allocation for a multiuser integrated sensing and communication (ISAC) downlink with bursty queues and imperfect channel state information (CSI). Starting from a long-run utility--backlog objective, we derive its common task reward and online score. Integer departures are represented by threshold events of indefinite Gaussian quadratic forms, accounting for estimation error in both signal and interference. Their moments give the conditional one-slot task reward and characterize the error of an efficient plug-in score. An anchored quadratic Lyapunov look-ahead corrects its reward-greedy action with a bounded nominal loss. Across five CSI-error levels, the rule reduces mean queue exceedance by 27.4--43.9\\% (0.49--0.99 percentage points) relative to the plug-in maximizer, with mean reward loss below 0.01 per slot. The rule achieves higher reward and lower exceedance than DPP, SAC and PPO; its advantage over freshly retrained learning baselines extends to five configurations with 9--23 power-allocation variables using fixed candidate budgets. For the seven-variable system, a fused implementation reproduces all 25 confirmation trajectories and achieves a one-core p99 decision time of 0.274--0.311\\,ms.",
+    "published_date": "2026-10-18",
+    "updated_date": "2026-10-18",
+    "primary_category": "cs.NI",
+    "categories": [
+      "cs.NI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.25307v1",
+    "comment": ""
+  },
+  {
+    "arxiv_id": "2610.25106",
+    "title": "A Novel OFDM-FMCW Waveform for Low-Complexity Joint Sensing and Communication",
+    "authors": [
+      "Amir Bouziane",
+      "Salah Eddine Zegrar",
+      "Huseyin Arslan"
+    ],
+    "abstract": "With the advent of 6th Generation (6G) wireless networks, integrating Orthogonal Frequency Division Multiplexing (OFDM) and Frequency Modulated Continuous Wave (FMCW) waveforms presents a promising solution for simultaneous communication and sensing. While OFDM offers high communication performance, it requires complex transceivers for sensing applications. Conversely, FMCW is easily implemented for sensing but provides low data rates for communication. This letter derives the mathematical relationship between OFDM and FMCW, showing how FMCW can be generated from the diagonal elements of the OFDM modulator (\\ie, the Discrete Fourier Transform (DFT) matrix). We propose a novel approach that leverages the DFT matrix to seamlessly integrate these two waveforms, minimizing interference and enabling high data rate communication alongside low-complexity sensing receiver design. Extensive simulations demonstrate the effectiveness of our technique in achieving simultaneous sensing and",
+    "published_date": "2026-10-18",
+    "updated_date": "2026-10-18",
+    "primary_category": "eess.SP",
+    "categories": [
+      "eess.SP"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.25106v1",
+    "comment": ""
+  },
+  {
+    "arxiv_id": "2610.25044",
+    "title": "Normalizing Flow for Neural-Enhanced Track-Before-Detect",
+    "authors": [
+      "Shaoxiu Wei",
+      "Bhaskar Rao",
+      "Florian Meyer"
+    ],
+    "abstract": "Multiobject tracking (MOT) is a fundamental capability in autonomous navigation, radar and sonar systems, as well as 6G integrated sensing-and-communication (ISAC) networks. In this paper, we propose a neural-enhanced track-before-detect (TkBD) framework that operates directly on complex-valued raw signals and learns a latent representation of unmodeled propagation effects during runtime. We introduce an environment-dependent latent intensity variable that characterizes the signal power of each object in the shared propagation environment. The probability density function of this intensity variable is represented by a normalizing flow and trained online in an unsupervised manner within the sequential Bayesian inference procedure. The learning objective is derived from a variational Bayes formulation by maximizing the evidence lower bound (ELBO), thereby accounting for the uncertainties inherent in the Bayesian TkBD problem. To enable scalable inference, we make use of a recently introduced Bayesian TkBD framework that combines belief propagation, which avoids high-dimensional operations, with sequential Monte Carlo methods for efficient low-dimensional updates.",
+    "published_date": "2026-10-18",
+    "updated_date": "2026-10-18",
+    "primary_category": "eess.SP",
+    "categories": [
+      "eess.SP",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.25044v1",
+    "comment": ""
+  },
+  {
+    "arxiv_id": "2610.24651",
+    "title": "Target Sensing in Full-Dimensional MIMO-OFDM ISAC Systems Via Coupled Tensor Decomposition",
+    "authors": [
+      "Ruoyu Zhang",
+      "Tingjie Yang",
+      "Tianyu Zhao",
+      "Lei Cheng",
+      "Shuai Wang",
+      "Wen Wu",
+      "Hüseyin Arslan"
+    ],
+    "abstract": "Integrated sensing and communication (ISAC) has been recognized as a key enabler for future wireless communication systems. However, existing ISAC designs based on MIMO-OFDM generally fail to fully exploit the spatial degrees of freedom and the communication data payload, resulting in restricted target sensing performance. To cope with this issue, in this paper we propose a novel target sensing method for full-dimensional (FD) MIMO-OFDM ISAC systems based on coupled tensor decomposition. We first characterize the system model of FD MIMO-OFDM ISAC, where the base station employs a large number of antennas in two dimensions and facilitates both sensing and communication via the data payload of OFDM signals. Then, we formulate the problem of estimating target parameters as a coupled canonical polyadic decomposition (CPD) problem, which jointly leverages the echo signals of communication data payload over multiple subcarriers in the frequency domain. The theoretical analysis indicates that the formulated coupled CPD problem possesses a more relaxed uniqueness condition compared with the ordinary CPD problem, thereby enabling more stable target sensing performance through the pure communication data payload in FD MIMO-OFDM ISAC. In addition, we develop a coupled CPD-based target sensing algorithm, where the target parameters, including azimuth and elevation angles, ranges, and velocities, are extracted from the decomposed factor matrices. Numerical results show that the proposed target sensing method achieves a higher success rate and more accurate parameter estimation than existing tensor decomposition methods.",
+    "published_date": "2026-10-17",
+    "updated_date": "2026-10-17",
+    "primary_category": "eess.SP",
+    "categories": [
+      "eess.SP"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.24651v1",
+    "comment": "16 pages, 10 figures"
+  },
+  {
+    "arxiv_id": "2610.24416",
+    "title": "Dual Secure Sensing and Communications in MA-Enabled Networked ISAC Systems",
+    "authors": [
+      "Yan Yang",
+      "Jianwei Zhao",
+      "Zhendong Li",
+      "Wen Chen",
+      "Weimin Jia",
+      "Feifei Gao",
+      "Shi Jin"
+    ],
+    "abstract": "Integrated sensing and communication (ISAC) is envisioned as a cornerstone technology for next-generation networks, yet it introduces significant security risks in both communication and sensing domains. To mitigate the coverage limitations inherent in conventional mono-static or bi-static setups, this paper proposes a networked ISAC framework empowered by movable antennas (MAs). By leveraging flexible antenna reconfiguration, MAs provide additional spatial degrees of freedom to significantly boost beamforming gain and interference suppression. Specifically, we investigate a novel dual-domain security paradigm where networked base stations collaboratively protect uplink (UL) and downlink (DL) transmissions from communication eavesdropping while simultaneously safeguarding target sensing data against sensing eavesdroppers (SEs). To this end, we formulate a joint optimization problem to maximize the sum of secrecy rates, subject to sensing requirements, SE eavesdropping probability constraint, and practical MA deployment constraints, by jointly optimizing receive combiners, transmit beamformers, UL power allocation, and MA positions. To address this non-convex problem with highly coupled variables, an efficient alternating optimization algorithm is proposed, integrating closed-form solutions for receive combiners, successive convex approximation for transmit beamforming and UL power, and a tailored sensing-aware multi-candidate particle swarm optimization for the high-dimensional MA positioning. Extensive numerical results validate the effectiveness of the proposed algorithms, demonstrating that the proposed MA-enabled networked cooperative ISAC design significantly outperforms conventional fixed-position antenna-based designs in terms of security performance, while achieving notable power- and antenna-saving gains.",
+    "published_date": "2026-10-17",
+    "updated_date": "2026-10-17",
+    "primary_category": "eess.SP",
+    "categories": [
+      "eess.SP"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.24416v1",
+    "comment": ""
+  },
+  {
+    "arxiv_id": "2610.24415",
+    "title": "Movable Antenna-Enabled Multi-Static Cooperative Secure ISAC: Architecture, Mechanisms, and Enabling Technologies",
+    "authors": [
+      "Yan Yang",
+      "Zhendong Li",
+      "Jianwei Zhao",
+      "Qingqing Wu",
+      "Lipeng Zhu",
+      "Weimin Jia",
+      "Wen Chen"
+    ],
+    "abstract": "The broadcast nature of integrated sensing and communication (ISAC) signals exposes them to physical-layer security (PLS) threats, including eavesdropping and jamming. Conventional fixed-position antennas provide limited spatial flexibility under highly correlated legitimate, sensing, and adversarial channels, while multi-static cooperative ISAC offers distributed spatial diversity but remains vulnerable to information leakage. To address these limitations, this article proposes a novel movable antenna (MA)-enabled multi-static cooperative secure ISAC framework centered on dual-scale spatial reconfiguration. Specifically, continuous MA repositioning reshapes local propagation channels, while distributed multi-static nodes provide complementary network-level spatial diversity. Their synergy transforms local antenna geometry and distributed network geometry into a unified controllable spatial resource for jointly enhancing communication, sensing, and PLS. This article first presents the system architecture of the proposed framework and its representative application scenarios, followed by an analysis of the physical-layer mechanisms underlying the resulting gains. Subsequently, we elaborate on the key enabling technologies for practical deployment. A case study further demonstrates the communication-sensing-security trade-off and antenna-saving potential of the proposed framework. Finally, open challenges and future research directions are identified toward practical MA-enabled multi-static secure ISAC networks.",
+    "published_date": "2026-10-17",
+    "updated_date": "2026-10-17",
+    "primary_category": "eess.SP",
+    "categories": [
+      "eess.SP"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.24415v1",
+    "comment": ""
+  },
+  {
     "arxiv_id": "2610.23602",
     "title": "Integrated sensing, communications, and identification for low-altitude economy",
     "authors": [
@@ -72,12 +353,12 @@
     ],
     "abstract": "Multi-carrier underwater integrated sensing and communication (ISAC) realizes concurrent acoustic communication and localization, yet the frequency selectivity of the acoustic channel creates uneven positioning capabilities across subcarriers. This paper proposes a localization-oriented subcarrier and power allocation scheme for multi-anchor underwater ISAC systems. We build a unified orthogonal subcarrier multiplexing framework and derive closed-form Cramer-Rao bounds (CRBs) under frequency-selective channels with colored noise. We derive a subcarrier-level localization information contribution from the time of arrival Fisher information, which enables localization-oriented resource allocation. We derive several theoretical properties regarding the distance and frequency dependence of the localization information metric, and establish a distance-frequency matching principle. These results provide a theoretical foundation for localization-oriented resource allocation and guide the design of a low-complexity greedy algorithm that improves positioning accuracy. Specifically, the algorithm iteratively allocates subcarriers to minimize the residual positioning-error objective, thereby improving positioning accuracy while satisfying communication quality-of-service (QoS) constraints. Simulations verify that our method yields much lower positioning error bound than uniform, random and high-frequency-first subcarrier allocation in symmetric or asymmetric topologies while guaranteeing communication QoS, achieving superior communication-localization tradeoffs.",
     "published_date": "2026-10-16",
-    "updated_date": "2026-10-16",
+    "updated_date": "2026-10-19",
     "primary_category": "eess.SP",
     "categories": [
       "eess.SP"
     ],
-    "pdf_url": "https://arxiv.org/pdf/2610.23381v1",
+    "pdf_url": "https://arxiv.org/pdf/2610.23381v2",
     "comment": ""
   },
   {
@@ -530,123 +811,6 @@
     "comment": "15 pages, 6 figures, 1 table"
   },
   {
-    "arxiv_id": "2610.11987",
-    "title": "Joint Pinching-Antenna Position and Power Optimization for Dual-Waveguide ISAC Systems",
-    "authors": [
-      "Saeid Pakravan",
-      "Imene Trigui",
-      "Wessam Ajib",
-      "Wei-Ping Zhu"
-    ],
-    "abstract": "Pinching-antenna (PA) systems provide spatial reconfigurability for integrated sensing and communication (ISAC) through controllable radiation locations along dielectric waveguides. This paper investigates a dual-waveguide PA-assisted ISAC system in which the communication user also serves as the sensing target, coupling the communication and sensing links through a common user/target geometry. Spatially separated transmit and receive waveguides provide separate spatial control over the forward and return sensing paths. We jointly optimize the transmit and receive PA positions and transmit power to maximize the aggregate communication rate subject to minimum sensing-SNR and two-dimensional localization Cramer-Rao bound (CRB) requirements, along with power, energy, and deployment constraints. To solve the resulting non-convex problem, we develop an alternating optimization algorithm that combines a bounded water-filling power update with a proximal first-order joint PA-position update. Numerical results show that the proposed design achieves higher communication rates than the considered benchmarks, with more pronounced gains under stringent localization requirements.",
-    "published_date": "2026-10-08",
-    "updated_date": "2026-10-08",
-    "primary_category": "eess.SP",
-    "categories": [
-      "eess.SP"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2610.11987v1",
-    "comment": ""
-  },
-  {
-    "arxiv_id": "2610.11720",
-    "title": "Outage-Aware Robust Sensing for UAV ISAC Systems",
-    "authors": [
-      "Qiming Li",
-      "Lei Zhang",
-      "Haoran Xu",
-      "Lina Mohjazi"
-    ],
-    "abstract": "Integrated sensing and communications (ISAC) infrastructure can provide an external perception layer for aerial robots, but dynamic blockage makes the set of informative sensing links at the next update uncertain. A single predicted availability pattern can miss low-information outcomes, whereas protecting all patterns wastes power and may become infeasible when all links are blocked. We propose an outage-aware conformal robust power-allocation framework for multi-BS UAV tracking. A history-aware joint predictor maps radar and tracking histories to next-slot availability probabilities, and adaptive prediction sets retain plausible correlated patterns. Tracking constraints are enforced only for retained non-outage patterns, while the all-blocked pattern is treated separately as a physical sensing outage. With per-slot beam directions fixed, the resulting scalar-power allocation is a semidefinite program. A reliability bound relates serviceable-slot tracking failure to deployed-policy miscoverage and optimization infeasibility. Across paired closed-loop simulations over five random seeds, the method attains a 0.01% serviceable-slot constraint-violation rate and uses 47.0% less power than protection over all non-outage patterns.",
-    "published_date": "2026-10-08",
-    "updated_date": "2026-10-08",
-    "primary_category": "eess.SP",
-    "categories": [
-      "eess.SP",
-      "cs.IT"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2610.11720v1",
-    "comment": "6 pages, 3 figures"
-  },
-  {
-    "arxiv_id": "2610.11434",
-    "title": "An Embodied Multiagent Framework Based on Token Communications for Cooperative ISAC",
-    "authors": [
-      "Jiahe Guo",
-      "Jun Du",
-      "Chunxiao Jiang",
-      "Jintao Wang"
-    ],
-    "abstract": "The emerging low-altitude economy demands unmanned aerial vehicle (UAV)-enabled integrated sensing and communication (ISAC) for reliable connectivity and environmental awareness. In particular, embodied UAV agents offer a promising means of supporting autonomous operations through a closed loop linking perception, decision-making, and physical actions. However, each UAV has access only to local observations, and effective cooperation requires exchanging local states and intentions. Directly sharing such information can incur substantial signaling overhead and hinder timely coordination in dynamic environments. To deal with this problem, this paper investigates a cooperative ISAC network of embodied UAV agents and formulates a joint token communications (TokCom) and physical control problem to minimize total propulsion energy subject to communication and sensing rate requirements. Then, we propose a state--intent TokCom (SI-TokCom) framework driven by multi-agent embodied policy learning. Specifically, separate pretrained codebooks enable compact exchanges of local states and intentions, while UAV agents jointly learn to select and compose tokens and determine physical actions based on local observations and received tokens. Simulation results show that SI-TokCom achieves 98.9\\% and 99.1\\% of the centralized baseline's communication and sensing rates, respectively. Compared with the local baseline, it improves the corresponding rates by 5.0\\% and 43.6\\%, respectively, with essentially unchanged propulsion energy. These results highlight the potential of TokCom for communication-efficient cooperation among embodied UAV agents in ISAC systems.",
-    "published_date": "2026-10-08",
-    "updated_date": "2026-10-08",
-    "primary_category": "eess.SP",
-    "categories": [
-      "eess.SP",
-      "cs.MA"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2610.11434v1",
-    "comment": "Submitted to TWC"
-  },
-  {
-    "arxiv_id": "2610.11172",
-    "title": "2D Coprime Pilots for Delay-Doppler Sensing in OFDM-ISAC Systems",
-    "authors": [
-      "Guanping Shang",
-      "Zeyan Zhuang",
-      "Anzheng Tang",
-      "Shenghui Song",
-      "Chi-Ying Tsui"
-    ],
-    "abstract": "Integrated Sensing and Communication (ISAC) is envisioned to endow future 6G systems with seamless sensing capabilities. To support efficient sensing with minimum communication overhead, sparse pilots embedded within communication frames have emerged as a promising solution. Along this line of research, existing studies have achieved engaging results in maximizing the unambiguous sensing region. However, jointly maximizing the sensing region and sensing accuracy remains challenging due to the lack of a unified performance metric and an effective pilot design framework. This paper jointly optimizes the unambiguous sensing region and sensing accuracy for estimating delay-Doppler (DD) parameters in Orthogonal Frequency Division Multiplexing (OFDM)-ISAC systems, where sensing mutual information (SMI) is adopted as a unified performance metric to characterize the overall sensing capability. Specifically, the joint optimization is formulated as an SMI maximization problem by systematically resolving sensing ambiguity and optimizing sensing accuracy. In particular, based on the generalized Bezout identity, we derive a 2D (timefrequency) coprime condition, which, as far as the authors know, is the first necessary and sufficient condition to achieve the unique estimation of DD parameters in the literature. Under this unambiguous condition, we further propose an Adam-Guided Iterative Refinement (AGIR) algorithm to optimize the sensing accuracy. Numerical results demonstrate the advantage of the proposed framework over existing designs, owing to the freedom offered by the 2D coprime condition in optimizing the sensing accuracy.",
-    "published_date": "2026-10-08",
-    "updated_date": "2026-10-08",
-    "primary_category": "eess.SP",
-    "categories": [
-      "eess.SP"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2610.11172v1",
-    "comment": "This paper has been submitted to IEEE journal"
-  },
-  {
-    "arxiv_id": "2610.10997",
-    "title": "Flexible Analog Self-Interference Cancellation for Waveform-Robust Monostatic ISAC",
-    "authors": [
-      "Anh Tuyen Le",
-      "Xiaojing Huang",
-      "J. Andrew Zhang",
-      "Peiyuan Qin",
-      "Le Chung Tran",
-      "Nhan Thanh Nguyen",
-      "Y. Jay Guo"
-    ],
-    "abstract": "Monostatic integrated sensing and communication (ISAC) requires in-band full-duplex operation, where self-interference cancellation (SIC) must suppress the strong transmit leakage while preserving weak sensing echoes. In the analog domain, this task is complicated by transmitter impairments, which generate conjugate and nonlinear SI components, and by waveforms with widely different statistics. This paper develops a flexible analog self-interference cancellation (FASIC) framework for monostatic ISAC based on the widely linear normalized least-mean-square (WL-NLMS) algorithm. FASIC generates the cancellation signal in digital baseband, subtracts it in the radio-frequency domain, and enables flexible sensing-range control via a configurable cancellation span. Its normalized adaptation remains stable across waveforms with substantially different peak-to-average power ratios (PAPRs), for which fixed-step adaptation can become unstable. We further relate transmit-waveform statistics to analog SIC performance and predict the waveform-dependent cancellation floor. Simulations validate the analysis and demonstrate stable analog SIC of approximately $30$--$34$ dB, with the low-PAPR waveforms achieving a $3.3$ dB deeper floor owing to their smaller high-order amplitude moments. Near-field static reflections within the cancellation span are suppressed while delayed and Doppler-shifted echoes are preserved. These results establish FASIC as a waveform-robust analog SIC solution and identify waveform statistics as a key consideration for sixth-generation (6G) waveform selection.",
-    "published_date": "2026-10-07",
-    "updated_date": "2026-10-07",
-    "primary_category": "eess.SP",
-    "categories": [
-      "eess.SP"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2610.10997v1",
-    "comment": ""
-  },
-  {
-    "arxiv_id": "2610.10994",
-    "title": "From Echoes to Evidence: Cooperative Fusion for Integrated Sensing and Communication",
-    "authors": [
-      "Xingqin Lin"
-    ],
-    "abstract": "Cooperative integrated sensing and communication (ISAC) can support shared situational awareness for unmanned aerial vehicles (UAVs), road vehicles, and industrial mobile robots such as automated guided vehicles (AGVs). Yet multipath can make nodes agree on a virtual target while useful weak echoes remain unexploited. This paper develops cooperative fusion that separates association confirmation, state refinement, and residual recovery. A cellular reference signal model accommodates arbitrary node counts, three-dimensional motion, monostatic and bistatic links, nuisance parameters, and correlated errors. We characterize report distinguishability under bounded bias and shared-reflector ambiguities that survive additional nodes. Minimax estimation yields directional weak-report refinement that preserves confirmed associations and limits bias-sensitive innovations; acquisition accounts for request and upload costs. Controlled experiments accompany UAV evaluations under a Third Generation Partnership Project (3GPP) stochastic channel model and a ray tracing environment representing San Francisco. In the latter environment, matched-budget fusion raises detection from observable site selection's 88.75% to 92.46% and reduces the false-output fraction from 11.06% to 0.40%. Against the strongest full-band fixed site, the 90th-percentile position error on commonly detected targets falls from 8.54 to 3.50 m. Association controls, local rejection ablations, and refinement studies distinguish the sources of these gains.",
-    "published_date": "2026-10-07",
-    "updated_date": "2026-10-07",
-    "primary_category": "cs.NI",
-    "categories": [
-      "cs.NI"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2610.10994v1",
-    "comment": "13 pages, 10 figures, 4 tables"
-  },
-  {
     "arxiv_id": "2610.09429",
     "title": "Predictive Beamforming via Echo-Beam Modality Separation with Cross-Attention for ISAC Systems",
     "authors": [
@@ -662,44 +826,6 @@
       "eess.SP"
     ],
     "pdf_url": "https://arxiv.org/pdf/2610.09429v1",
-    "comment": ""
-  },
-  {
-    "arxiv_id": "2610.09080",
-    "title": "User-Target Pairing for NOMA-Enabled ISAC in Low-Altitude Wireless Networks",
-    "authors": [
-      "Irfan Azam",
-      "Muddasir Rahim",
-      "Soumaya Cherkaoui"
-    ],
-    "abstract": "This paper presents a non-orthogonal multiple access (NOMA)-enabled integrated sensing and communication (ISAC) framework for low-altitude wireless networks (LAWN), where an aerial access point simultaneously serves ground users and senses aerial targets. To improve both communication efficiency and sensing reliability, a matching-based user-target pairing (MUTP) scheme is proposed, in which strong and weak channel NOMA users are first paired into NOMA groups and then assigned to sensing targets according to a sensing-aware pairing criterion. Furthermore, an adaptive power allocation (APA) strategy is developed to balance communication quality-of-service requirements and target detection performance. The proposed MUTP-APA scheme is compared with fixed greedy pairing, exhaustive search pairing, and conventional ISAC benchmark schemes under both fixed power allocation and APA. Simulation results show that our proposed scheme achieves higher sum rate, improved worst-target detection probability, and lower communication and sensing outage probabilities compared with conventional ISAC and fixed pairing baselines in NOMA-ISAC LAWN. Moreover, the proposed method closely approaches the exhaustive search benchmark while avoiding the high computational complexity.",
-    "published_date": "2026-10-06",
-    "updated_date": "2026-10-06",
-    "primary_category": "eess.SP",
-    "categories": [
-      "eess.SP"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2610.09080v1",
-    "comment": ""
-  },
-  {
-    "arxiv_id": "2610.08696",
-    "title": "Fundamental CRB-Rate Tradeoff of Rydberg Atomic Receivers for Integrated Sensing and Communication",
-    "authors": [
-      "Yin Zhang",
-      "Jiayi Zhang",
-      "Bokai Xu",
-      "Jieao Zhu",
-      "Bo Ai"
-    ],
-    "abstract": "Integrated sensing and communication (ISAC) is a key technology for next generation wireless networks, requiring highly sensitive, compact receiver front ends with multiband coverage. Rydberg atomic receivers (RARs) provide a promising architecture that satisfies these requirements owing to their high sensitivity and continuous frequency tuning capability. Unlike in classical ISAC systems utilizing orthogonal resource allocation, executing concurrent multi band tasks within a single atomic ensemble relies on shared energy state transitions. Owing to this shared structure, the communication and sensing tradeoff in RAR-based ISAC introduces an atomic-response tradeoff beyond the classical subspace and deterministic-random tradeoffs. This paper studies a multi-branch RAR (MB-RAR) architecture for joint communication and radar sensing. By solving the five level Lindblad master equation at the local oscillator (LO) biased operating point and linearizing the communication and sensing radio frequency (RF) signals as small perturbations, we obtain the double-sideband dynamic signal response of the MB-RAR. The model reveals two intrinsic constraints. First, increasing the coupling laser strength broadens the response bandwidth but can weaken the atomic response. Second, strengthening one branch's LO can suppress the other branch's conversion gain through the shared Rydberg state, even when the latter's LO bias remains fixed, which is termed the inter band gain inhibition (IBGI). Based on these mechanisms, we formulate the achievable Cramér--Rao bound (CRB)-rate region and develop a rate-constrained joint search over coupling strength and LO power allocation. Numerical results validate the proposed response model and show that joint optimization provides a more complete characterization of the achievable CRB-rate region.",
-    "published_date": "2026-10-06",
-    "updated_date": "2026-10-06",
-    "primary_category": "eess.SP",
-    "categories": [
-      "eess.SP"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2610.08696v1",
     "comment": ""
   },
   {
@@ -723,24 +849,6 @@
     "comment": "6 pages, 4 figures, conference"
   },
   {
-    "arxiv_id": "2610.08267",
-    "title": "WM4ISAC: World Model for Proactive ISAC Under Dynamic Blockage",
-    "authors": [
-      "Zichao Xiao",
-      "Linlong Wu",
-      "Bhavani Shankar Mysore R"
-    ],
-    "abstract": "Dynamic blockage severely degrades vehicular integrated sensing and communication (ISAC), since narrow millimeter-wave beams must be adjusted before the line-of-sight (LoS) link is blocked or misaligned. This paper proposes WM4ISAC, a proactive ISAC framework built on a world model that learns a reusable latent dynamics model of the traffic environment from downlink radar heatmaps, rather than directly mapping observations to beam indices. The proposed framework uses a vision (V) module to compress sensing observations, an action-conditioned memory (M) module to predict latent environment evolution, and lightweight event heads to evaluate LoS alignment, blockage, and scatter-assisted non-line-of-sight (NLoS) alignment for candidate beams. A codebook-level controller then uses these event predictions to proactively switch between LoS and NLoS beams without knowing the future user or blocker states. Simulations under dynamic blockage show that WM4ISAC improves the mean rate by $28.9\\%$ over current LoS tracking, raises the 5\\%-tile rate from $0.9$ Mbps to $30.5$ Mbps, and reaches $88.7\\%$ of the perfect-information upper bound.",
-    "published_date": "2026-10-06",
-    "updated_date": "2026-10-06",
-    "primary_category": "eess.SP",
-    "categories": [
-      "eess.SP"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2610.08267v1",
-    "comment": "Accepted to IEEE ISAC 2026"
-  },
-  {
     "arxiv_id": "2610.07994",
     "title": "Waveform Randomization for Secure ISAC",
     "authors": [
@@ -758,84 +866,6 @@
     ],
     "pdf_url": "https://arxiv.org/pdf/2610.07994v1",
     "comment": "submitted to IEEE ICC 2027"
-  },
-  {
-    "arxiv_id": "2610.07462",
-    "title": "Comparative Analysis of Filter Bank Waveforms for ISAC Systems: 2D-FFT FB and AFBM",
-    "authors": [
-      "Polianna Basso",
-      "Victor Augusto Del Monego",
-      "Hyeon Seok Rou",
-      "Bruno S. Chang",
-      "Giuseppe Thadeu Freitas de Abreu",
-      "Didier Le Ruyet"
-    ],
-    "abstract": "We present a comparative analysis of two promising filter bank multicarrier waveforms for integrated sensing and communications (ISAC) systems operating in high-mobility environments. In particular, we consider two-dimensional FFT-precoded filter bank (2D-FFT FB) modulation and the recently-proposed affine filter bank modulation (AFBM) waveforms, which exploit different signal representations across the time-frequency, delay-Doppler and affine domains to improve robustness against Doppler effects, each resulting in distinct features. On the one hand, 2D-FFT FB improves spectral localization under high Doppler conditions, while AFBM combines chirp-based modulation with filter bank processing to achieve low peak-to-average power ratio (PAPR) and reduced out-of-band emission (OOBE). These schemes are compared in terms of OOBE, PAPR and bit-error-rate (BER), as well as the delay and Doppler cuts of the ambiguity function (AF) under deterministic and random sensing symbols. Results for orthogonal time frequency space (OTFS) and affine frequency division multiplexing (AFDM) are also included to provide additional basis of comparison. The results show the performance trade-offs between the two filter bank (FB)-based schemes, providing insights into waveform candidates for high-mobility ISAC scenarios such as vehicular communications and future sixth generation (6G) networks.",
-    "published_date": "2026-10-05",
-    "updated_date": "2026-10-05",
-    "primary_category": "eess.SP",
-    "categories": [
-      "eess.SP"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2610.07462v1",
-    "comment": "6 pages, 7 figures, 2027 IEEE 105th Vehicular Technology Conference (VTC2027-Spring)"
-  },
-  {
-    "arxiv_id": "2610.06492",
-    "title": "Fast Tuning of Pinching Antenna-Assisted ISAC Systems via User Clustering",
-    "authors": [
-      "Ruizhi Niu",
-      "Ali Bereyhi"
-    ],
-    "abstract": "Pinching-antenna systems (PASSs) offer a great degree of flexibility for integrated sensing and communications (ISAC) by adapting the pinching locations for both communication channel reshaping and sensing-beam steering. Despite that, direct location optimization in PASSs is high-dimensional and non-convex, making their fast reconfiguration difficult in practice. This work proposes a low-complexity PASS-assisted ISAC design based on user clustering. Instead of direct optimization of pinching locations, the elements on each waveguide are distributed over multiple segments, where each segment serves a cluster of users or targets. This alternative configuration reduces the location tuning problem to a low-dimensional weight allocation task, which can be efficiently addressed via a gradient based method. We propose a low-complexity iterative algorithm, in which the digital precoder is updated via an equivalent weighted mean squared error minimization, and pinching locations are updated via weight allocation and projection. Our numerical experiments show that the proposed design can significantly enhance the communication-sensing trade-off of ISAC systems over the benchmark designs with modest computational cost. The results highlight the potential gain of deploying PASS-assisted transceiver in practical ISAC systems.",
-    "published_date": "2026-10-05",
-    "updated_date": "2026-10-05",
-    "primary_category": "eess.SP",
-    "categories": [
-      "eess.SP"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2610.06492v1",
-    "comment": "This work has been accepted for publication in the Proceedings of the IEEE Global Communications Conference (GLOBECOM) 2026"
-  },
-  {
-    "arxiv_id": "2610.05527",
-    "title": "Bistatic ISAC under Data Payload Uncertainty",
-    "authors": [
-      "Musa Furkan Keskin",
-      "Silvia Mura",
-      "Marouan Mizmizi",
-      "Dario Tagliaferri",
-      "Fan Liu",
-      "Henk Wymeersch"
-    ],
-    "abstract": "We investigate the problem of data payload uncertainty (DPU) in bistatic integrated sensing and communication (ISAC) systems, which refers to imperfect knowledge of transmit data symbols at the sensing receiver. DPU may result from limited fronthaul capacity in base station (BS)-to-BS bistatic sensing or data demodulation errors in BS-to-user equipment (UE) bistatic sensing, and can impair target detection through elevated sidelobe levels in the delay-Doppler domain. To characterize this effect, we derive closed-form expressions for the peak-to-sidelobe level ratio (PSLR) of two common OFDM receivers, namely reciprocal filtering (RF) and matched filtering (MF), under DPU. The analysis shows that the DPU-induced sidelobe degradation of RF depends on the inverse second-, fourth-, and sixth-order constellation moments, whereas that of MF depends only on the direct fourth-order moment, making RF considerably more vulnerable to DPU. To mitigate the resulting sidelobes, we further propose a novel, DPU-aware minimum mean-squared-error (MMSE) receiver. Simulation results validate the PSLR analysis and demonstrate superior detection performance of MMSE over RF and MF while revealing the extent to which it can recover DPU-induced performance loss relative to a genie-aided receiver with perfect knowledge of data payload.",
-    "published_date": "2026-10-04",
-    "updated_date": "2026-10-04",
-    "primary_category": "eess.SP",
-    "categories": [
-      "eess.SP"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2610.05527v1",
-    "comment": ""
-  },
-  {
-    "arxiv_id": "2610.05019",
-    "title": "Joint Target-Tag Estimation in Ambient Backscatter-Based ISAC",
-    "authors": [
-      "Awadhesh Gupta",
-      "Kumar Vijay Mishra",
-      "Naveen K. D. Venkategowda",
-      "Aditya K. Jagannatham"
-    ],
-    "abstract": "Integrated sensing and communication (ISAC) has emerged as a key paradigm for unifying radar sensing and wireless communications within a shared hardware and spectral framework. In parallel, ambient backscatter communication (AmBC) has gained attention as a low-power solution for enabling passive connectivity by modulating and reflecting existing radio-frequency signals. Motivated by these developments, this paper investigates an integrated sensing and ambient backscatter communication (ISABC) framework in which a dual-functional radar-communication (DFRC) transceiver jointly performs high-resolution target sensing and low-power tag detection in cluttered environments. Within this ISAC and AmBC setting, we develop a comprehensive system model that jointly captures the estimation of target and clutter parameters, including delay, Doppler shift, and complex reflectivity, together with the recovery of embedded AmBC tag symbols. The resulting DFRC signal model reveals strong coupling among direct-path reflections, clutter echoes, and passive backscatter signals, leading to a highly entangled estimation problem. To address this challenge, we propose a robust three-stage signal processing framework that sequentially estimates target and clutter parameters before detecting the AmBC tag message. This structured approach effectively disentangles the superimposed components, improving both sensing accuracy and communication reliability in ISAC systems. Extensive simulations, benchmarked against the Cramer-Rao lower bound (CRLB), demonstrate the superior estimation performance of the proposed DFRC-based solution. The results further highlight the fundamental trade-offs between sensing accuracy and backscatter communication efficiency in ISABC systems.",
-    "published_date": "2026-10-04",
-    "updated_date": "2026-10-04",
-    "primary_category": "eess.SP",
-    "categories": [
-      "eess.SP"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2610.05019v1",
-    "comment": ""
   },
   {
     "arxiv_id": "2610.04885",
@@ -1070,14 +1100,14 @@
       "Ying Wang",
       "Wen Chen"
     ],
-    "abstract": "This paper investigates a reconfigurable intelligent surface (RIS)-enabled secure integrated sensing and communication (ISAC) system, where the direct links between the base station (BS) and users are blocked and a mobile eavesdropper is treated as both a potential wiretapper and a sensing target. The time-varying eavesdropper state leads to dynamically changing wiretap channels, which may degrade the effectiveness of conventional transmission designs based on outdated eavesdropper information. To address this issue, the BS tracks the eavesdropper over consecutive time slots and exploits the predicted state information to adapt secure transmission. An optimization problem is formulated to maximize the sum secrecy rate by jointly designing the BS beamforming, artificial noise, and the RIS reflection coefficients for secure transmission and echo sensing. Meanwhile, an error-covariance constraint is imposed to guarantee the required tracking accuracy. To solve the nonconvex and temporally coupled problem, we propose an optimization algorithm integrating the extended Kalman filter (EKF) and block coordinate optimization framework, in which the eavesdropper state is recursively predicted and updated, while the joint design problem is decomposed into four tractable subproblems. Simulation results demonstrate that compared with benchmark schemes, the proposed algorithm can better guarantee the secrecy rate and effectively track the moving trajectory of the eavesdropper.",
+    "abstract": "This paper investigates a reconfigurable intelligent surface (RIS)-enabled secure integrated sensing and communication (ISAC) system, where the direct links between the base station (BS) and users are blocked, and the mobile eavesdropper is treated as the sensing target. The mobility of the eavesdropper induces time-varying wiretap channels, potentially compromising secure transmission when outdated eavesdropper information is used. To address this challenge, the BS dynamically tracks the eavesdropper over consecutive time slots and exploits the predicted state information to adapt its transmission strategy. A sum secrecy rate maximization problem is formulated by jointly optimizing the BS beamforming, artificial noise, and RIS reflection coefficients, subject to a constraint on the tracking error covariance to ensure the required sensing accuracy. To tackle the resulting nonconvex optimization problem with temporal coupling, an iterative algorithm integrating an extended Kalman filter (EKF) with an alternating optimization framework is developed. Specifically, the EKF recursively predicts and updates the eavesdropper's state, while the joint optimization problem is decomposed into four tractable subproblems that are solved iteratively. Simulation results demonstrate that the proposed algorithm achieves improved secrecy performance while effectively tracking the trajectory of the mobile eavesdropper, compared with benchmark schemes.",
     "published_date": "2026-09-15",
-    "updated_date": "2026-09-15",
+    "updated_date": "2026-10-18",
     "primary_category": "eess.SP",
     "categories": [
       "eess.SP"
     ],
-    "pdf_url": "https://arxiv.org/pdf/2609.22307v1",
+    "pdf_url": "https://arxiv.org/pdf/2609.22307v2",
     "comment": ""
   },
   {
@@ -1341,24 +1371,6 @@
     "comment": ""
   },
   {
-    "arxiv_id": "2608.16634",
-    "title": "Cramér-Rao Bound Analysis for Cell-Free ISAC Systems with Fluid Intelligent Metasurfaces",
-    "authors": [
-      "Changhao He",
-      "Asmaa Abdallah",
-      "Ahmed M. Eltawil"
-    ],
-    "abstract": "Fluid intelligent metasurface (FIM) is an emerging antenna architecture that continuously reshapes its physical geometry to optimize wireless performance. While existing studies on FIM-aided integrated sensing and communication (ISAC) rely on co-located single-base-station (BS) deployments, they fundamentally underutilize FIM's morphological flexibility due to restricted observation angles. In this paper, we investigate a FIM-augmented cell-free ISAC architecture, where distributed access points (APs) collaboratively observe a target from diverse angles. We derive the complete Fisher information matrix for target angle estimation and obtain a closed-form localization CRB that explicitly quantifies the angular diversity gain. By analyzing the block structure of the Fisher information matrix, we uncover three cell-free-specific phenomena: (i) cross-AP information coupling, (ii) multiplicative Tx--Rx FIM coupling, and (iii) angular diversity amplification. Under a 28\\,GHz configuration with four APs and eight FIM elements per AP, our analysis shows that distributed angular diversity amplifies the FIM morphing gain to 15.8\\,dB, compared to only 0.4\\,dB in a single-AP pair deployment with the same total antenna count. We further propose an alternating optimization algorithm for joint beamforming and FIM shape design via semidefinite relaxation whose tightness is formally proved. Numerical results confirm that the proposed cell-free FIM-ISAC architecture achieves a 4.5\\,dB localization CRB reduction over the single-AP fixed-array baseline at 10\\,dB sensing SNR while maintaining communication quality-of-service constraints across the entire Pareto frontier.",
-    "published_date": "2026-08-17",
-    "updated_date": "2026-08-17",
-    "primary_category": "cs.IT",
-    "categories": [
-      "cs.IT"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2608.16634v1",
-    "comment": ""
-  },
-  {
     "arxiv_id": "2608.16290",
     "title": "Beamforming and Filter Design for Bistatic ISAC under Known and Unknown Transmit Symbols",
     "authors": [
@@ -1514,86 +1526,47 @@
     "comment": "This work has been submitted to the IEEE for possible publication"
   },
   {
-    "arxiv_id": "2608.04361",
-    "title": "RIS-Enabled Energy-Efficient ISAC for Vehicular Applications",
+    "arxiv_id": "2610.10997",
+    "title": "Flexible Analog Self-Interference Cancellation for Waveform-Robust Monostatic ISAC",
     "authors": [
-      "Shengyu Yang",
-      "Yuhan Wang",
-      "Shuhao Zeng",
-      "Haobo Zhang",
-      "Boya Di",
-      "Lingyang Song"
+      "Anh Tuyen Le",
+      "Xiaojing Huang",
+      "J. Andrew Zhang",
+      "Peiyuan Qin",
+      "Le Chung Tran",
+      "Nhan Thanh Nguyen",
+      "Y. Jay Guo"
     ],
-    "abstract": "By incorporating integrated sensing and communication (ISAC) into vehicle-to-infrastructure (V2I) networks, roadside units (RSUs) can support data transmission while providing additional sensing capabilities, thereby enabling intelligent transportation services. By deploying large-scale antenna arrays at RSU, the V2I network can realize more reliable connectivity and more accurate vehicle tracking by harnessing the significant beamforming gains provided by the enlarged antenna aperture. However, it is not energy efficient to realize such arrays using conventional phased arrays, which rely on numerous power-hungry phase shifters. To address this, this demo presents the first reconfigurable intelligent surface (RIS)-based ISAC-empowered vehicular network prototype, which operates at sub-6 GHz band to be compatible with existing vehicular systems. The RIS has a low power consumption of 6.8W. Experimental results show that compared with the system without RIS, the proposed RIS-based prototype enables more accurate vehicle trajectory tracking with an average localization error of 0.11m and supports more robust data transmission, as evidenced by a 41.9% reduction in error vector magnitude (EVM). These results validate the effectiveness of the RIS-based ISAC system for supporting vehicular networks.",
-    "published_date": "2026-08-05",
-    "updated_date": "2026-08-05",
-    "primary_category": "eess.SP",
-    "categories": [
-      "eess.SP",
-      "eess.SY"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2608.04361v1",
-    "comment": ""
-  },
-  {
-    "arxiv_id": "2608.02169",
-    "title": "Performance Analysis and Joint Beamforming for Hybrid RIS-Aided Massive MIMO ISAC",
-    "authors": [
-      "Smriti Uniyal",
-      "Tianyu Fang",
-      "Marco Di Renzo",
-      "Markku Juntti",
-      "Nhan Thanh Nguyen"
-    ],
-    "abstract": "In integrated sensing and communication (ISAC) systems, stringent sensing performance constraints can severely limit the power available for communication. Hybrid reconfigurable intelligent surfaces (HRISs) with capabilities of both passive reflection and active signal amplification can significantly improve communication performance in the power-limited regime. This motivates us to analyze and optimize the performance of an HRIS-aided multiple-input-multiple-output (mMIMO) ISAC system. We first estimate the effective uplink/downlink channels using the minimum mean square error method. We then derive closed-form expressions for the communication sum-rate and sensing Cramér-Rao lower bound (CRLB). It is shown that under the equal power allocation strategy, the CRLB remains independent of the HRIS coefficients. Then, we formulate a joint optimization problem of power allocation and HRIS beamforming to maximize the communication sum-rate while ensuring specified sensing CRLB constraints. To solve the formulated non-convex problem, we propose an alternating optimization algorithm based on fractional programming and successive convex approximation. Extensive simulations validate our analysis and proposed algorithm, showing significant improvements in both communication and sensing performances enabled by the HRIS. For example, an HRIS with only $4$ active elements offers $97.30\\%$ improvement in the communication sum-rate, while ensuring a sensing CRLB constraint of $-30$ dB.",
-    "published_date": "2026-08-03",
-    "updated_date": "2026-08-03",
+    "abstract": "Monostatic integrated sensing and communication (ISAC) requires in-band full-duplex operation, where self-interference cancellation (SIC) must suppress the strong transmit leakage while preserving weak sensing echoes. In the analog domain, this task is complicated by transmitter impairments, which generate conjugate and nonlinear SI components, and by waveforms with widely different statistics. This paper develops a flexible analog self-interference cancellation (FASIC) framework for monostatic ISAC based on the widely linear normalized least-mean-square (WL-NLMS) algorithm. FASIC generates the cancellation signal in digital baseband, subtracts it in the radio-frequency domain, and enables flexible sensing-range control via a configurable cancellation span. Its normalized adaptation remains stable across waveforms with substantially different peak-to-average power ratios (PAPRs), for which fixed-step adaptation can become unstable. We further relate transmit-waveform statistics to analog SIC performance and predict the waveform-dependent cancellation floor. Simulations validate the analysis and demonstrate stable analog SIC of approximately $30$--$34$ dB, with the low-PAPR waveforms achieving a $3.3$ dB deeper floor owing to their smaller high-order amplitude moments. Near-field static reflections within the cancellation span are suppressed while delayed and Doppler-shifted echoes are preserved. These results establish FASIC as a waveform-robust analog SIC solution and identify waveform statistics as a key consideration for sixth-generation (6G) waveform selection.",
+    "published_date": "2026-10-07",
+    "updated_date": "2026-10-07",
     "primary_category": "eess.SP",
     "categories": [
       "eess.SP"
     ],
-    "pdf_url": "https://arxiv.org/pdf/2608.02169v1",
+    "pdf_url": "https://arxiv.org/pdf/2610.10997v1",
     "comment": ""
   },
   {
-    "arxiv_id": "2608.01854",
-    "title": "Movable Subarray-Aided ISAC in Hybrid Near-Far Field Channels",
+    "arxiv_id": "2610.07462",
+    "title": "Comparative Analysis of Filter Bank Waveforms for ISAC Systems: 2D-FFT FB and AFBM",
     "authors": [
-      "Ruiqi Liu",
-      "Yuanshuo Gang",
-      "Honghao Wang",
-      "Tianqi Mao"
+      "Polianna Basso",
+      "Victor Augusto Del Monego",
+      "Hyeon Seok Rou",
+      "Bruno S. Chang",
+      "Giuseppe Thadeu Freitas de Abreu",
+      "Didier Le Ruyet"
     ],
-    "abstract": "This letter investigates an integrated sensing and communication (ISAC) system aided by movable subarrays (MSAs) using a hybrid near-far field channel model. The sensing target and communication users are assumed to lie in the near field of the overall MSA aperture but in the far-field region of each subarray. Accordingly, a hybrid near-far field channel model is established, and the equivalent Fisher information matrix and Cramér-Rao bound (CRB) for joint range, elevation, and azimuth estimation are derived. The transmit beamforming matrix and subarray positions are jointly optimized to minimize the trace CRB subject to minimum communication signal-to-interference-plus-noise ratio (SINR), maximum transmit power and subarray movement constraints. An alternating optimization algorithm is developed combining iterative rank-one-penalized semidefinite relaxation with projected finite-difference block descent and backtracking. Numerical results show that the hybrid-field model closely matches the spherical-wave model, while MSAs substantially reduce the CRB.",
-    "published_date": "2026-08-03",
-    "updated_date": "2026-08-03",
-    "primary_category": "cs.IT",
-    "categories": [
-      "cs.IT",
-      "eess.SP"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2608.01854v1",
-    "comment": ""
-  },
-  {
-    "arxiv_id": "2608.01809",
-    "title": "Multi-Hop RIS ISAC for Target Positioning: A Tensor Decomposition-based Approach",
-    "authors": [
-      "Yirui Luo",
-      "Xiaoyan Ma",
-      "Yong Liang Guan",
-      "Christopher G. Brinton",
-      "Chau Yuen"
-    ],
-    "abstract": "Reconfigurable intelligent surface (RIS) has demon- strated remarkable potential to enhance the performance of integrated sensing and communication (ISAC), particularly when the line-of-sight (LoS) paths are obstructed. By controlling the reconfigurable elements on the surface, RIS can establish virtual LoS paths and provide considerable passive beamforming gains, thereby significantly improving the received signal quality. In this paper, we design a novel multi-hop RIS ISAC system for target positioning, where multiple RISs are deployed to assist the communication from a transmitter to associated users while simultaneously enhancing receiver sensing performance in target positioning. Specifically, we formulate an optimization problem to minimize the root mean square error (RMSE) of the target detection while guaranteeing the communication requirements of the users. To solve this problem, we first unfold the cascaded sens- ing channel through parallel factor decomposition, and develop a low-rank CANDECOMP/PARAFAC decomposition (CPD)-based scheme to extract the location parameters (i.e., angle of arrival, angle of departure and delay) of the sensing targets. Then, we develop a scheme for jointly selecting the transmit beamforming and RIS phase shift configurations to maximize the sensing energy at the receiver, which in turn leads to improved accuracy in target positioning. We also provide a uniqueness analysis, complexity analysis, and Cramér-Rao lower bound (CRLB) of the parameters estimated by our methodology. Simulation results validate the improvement in target positioning obtained by our design relative to baselines.",
-    "published_date": "2026-08-03",
-    "updated_date": "2026-08-03",
+    "abstract": "We present a comparative analysis of two promising filter bank multicarrier waveforms for integrated sensing and communications (ISAC) systems operating in high-mobility environments. In particular, we consider two-dimensional FFT-precoded filter bank (2D-FFT FB) modulation and the recently-proposed affine filter bank modulation (AFBM) waveforms, which exploit different signal representations across the time-frequency, delay-Doppler and affine domains to improve robustness against Doppler effects, each resulting in distinct features. On the one hand, 2D-FFT FB improves spectral localization under high Doppler conditions, while AFBM combines chirp-based modulation with filter bank processing to achieve low peak-to-average power ratio (PAPR) and reduced out-of-band emission (OOBE). These schemes are compared in terms of OOBE, PAPR and bit-error-rate (BER), as well as the delay and Doppler cuts of the ambiguity function (AF) under deterministic and random sensing symbols. Results for orthogonal time frequency space (OTFS) and affine frequency division multiplexing (AFDM) are also included to provide additional basis of comparison. The results show the performance trade-offs between the two filter bank (FB)-based schemes, providing insights into waveform candidates for high-mobility ISAC scenarios such as vehicular communications and future sixth generation (6G) networks.",
+    "published_date": "2026-10-05",
+    "updated_date": "2026-10-05",
     "primary_category": "eess.SP",
     "categories": [
       "eess.SP"
     ],
-    "pdf_url": "https://arxiv.org/pdf/2608.01809v1",
-    "comment": "Accepted by IEEE TWC"
+    "pdf_url": "https://arxiv.org/pdf/2610.07462v1",
+    "comment": "6 pages, 7 figures, 2027 IEEE 105th Vehicular Technology Conference (VTC2027-Spring)"
   },
   {
     "arxiv_id": "2609.34737",
@@ -2240,103 +2213,6 @@
     "comment": "Submitted to IEEE Conference on Integrated Sensing and Communications 2026"
   },
   {
-    "arxiv_id": "2607.00632",
-    "title": "Frame-Based AFDM-ISAC Waveform Design With Chirp-Enabled Pulse Compression",
-    "authors": [
-      "Qu Luo",
-      "Zilong Liu",
-      "Musavian Leila",
-      "Thomos Nikolaos",
-      "Qihao Peng",
-      "Pei Xiao"
-    ],
-    "abstract": "This paper proposes an Affine frequency division multiplexing (AFDM)-empowered integrated sensing and communications (ISAC) design, referred to as AFDM-ISAC. We first design a novel AFDM-ISAC frame structure that consists of both ISAC and pure data symbols. Each ISAC symbol consists of a single chirp subcarrier for both sensing and channel estimation, while the remaining subcarriers are allocated for communication. Building upon this structure, we present an analog-domain sensing receiver that down-mixes the received echo with a local chirp to fully exploit \\textit{chirp compression} gains avoiding the need for full-duplex hardware. In addition, a sensing fusion algorithm, guided by AFDM modulation parameters, is further proposed in the digital domain. Leveraging the distinct features of the proposed AFDM-ISAC frame, we present a low-complexity channel estimation scheme for high mobility channels based on a generalized complex exponential basis expansion model (GCE-BEM), along with an optimal power allocation strategy between pilot and data symbols. Moreover, to support frame-based AFDM communications, a GCE-BEM-based Kalman filter is also employed for robust intra-frame channel estimation.",
-    "published_date": "2026-07-01",
-    "updated_date": "2026-07-01",
-    "primary_category": "eess.SP",
-    "categories": [
-      "eess.SP"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2607.00632v1",
-    "comment": ""
-  },
-  {
-    "arxiv_id": "2606.28924",
-    "title": "Communication-Centric RIS-Assisted ISAC: Signal Modeling and BER Analysis",
-    "authors": [
-      "Yosefine Triwidyastuti",
-      "Tri Nhu Do"
-    ],
-    "abstract": "We propose and analyze a communication-centric reconfigurable intelligent surface (RIS)-assisted integrated sensing and communication (ISAC) system, in which a monostatic radar simultaneously senses a moving target and serves a user equipment (UE) over Nakagami-m fading. We design a dual-function phase-modulated continuous-wave (PMCW) waveform that embeds the data stream directly into the radar pulse train: each pulse carries one full maximum-length sequence whose polarity is flipped by a binary phase-shift keying data symbol, so that the same emission preserves the sharp range autocorrelation required for sensing while conveying one bit per pulse to the UE. We further propose a communication-centric RIS phase configuration that co-phases each element onto the direct radar-to-UE path, yielding a coherent superposition at the UE and a received-power gain that scales with the square of the number of elements. We show that from the radar's perspective, however, the same surface behaves as an uncontrolled scatterer, since the resulting reflection paths are mis-phased and do not benefit from array combining. We derive a closed-form approximation for the average UE bit error rate based on a moment-matched Gamma approximation, and we show that the same waveform still forms a usable range-Doppler map for sensing. Monte-Carlo simulations corroborate the analytical results.",
-    "published_date": "2026-06-27",
-    "updated_date": "2026-06-27",
-    "primary_category": "eess.SP",
-    "categories": [
-      "eess.SP"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2606.28924v1",
-    "comment": ""
-  },
-  {
-    "arxiv_id": "2606.25572",
-    "title": "MCRB and MSE Analysis for Parameter Estimation in AFDM-ISAC Systems",
-    "authors": [
-      "Tianyao Ma",
-      "Aimin Tang",
-      "Yin Xu",
-      "Qu Luo",
-      "Dazhi He",
-      "Wenjun Zhang"
-    ],
-    "abstract": "Affine frequency division multiplexing (AFDM) is a promising waveform for integrated sensing and communication (ISAC). In AFDM systems, the complex gains, delays, and Doppler shifts are commonly estimated from the AFDM symbols carrying pilots and data simultaneously. In practice, however, the unknown data symbols and data-pilot coupling interference may render the estimator mismatched to the true signal model. In this paper, we systematically characterize the parameter-estimation performance of AFDM-ISAC systems under practical model misspecification. The main contributions are threefold. First, we extend the Cramér-Rao bound (CRB) for a general observation model that treats the data symbols as unknown, which generalizes existing AFDM CRB analyses and serves as the matched benchmark for the subsequent analysis. Second, we identify two practical sources of misspecification, namely a covariance mismatch caused by insufficient pilot-data isolation and a combined covariance-and-mean mismatch caused by sequential single-target estimation, and derive the corresponding misspecified CRB (MCRB). Third, we characterize the pseudotrue parameters under different levels of prior knowledge, analyze the resulting estimation bias, and establish a lower bound (LB) on the mean square error (MSE). Simulation results validate the derived bounds and show that, under model misspecification, the CRB is overly optimistic while the MCRB and LB faithfully characterize the achievable accuracy. The comparison further reveals how these bounds vary with the pilot length and pilot power, providing useful guidance for pilot configuration.",
-    "published_date": "2026-06-24",
-    "updated_date": "2026-06-24",
-    "primary_category": "eess.SP",
-    "categories": [
-      "eess.SP"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2606.25572v1",
-    "comment": ""
-  },
-  {
-    "arxiv_id": "2606.22195",
-    "title": "Resolving Multi-Target Association in OFDM-based ISAC via Vision-aided Multi-Modal Learning",
-    "authors": [
-      "Meng Hua",
-      "Chenghong Bian",
-      "Deniz Gunduz"
-    ],
-    "abstract": "Orthogonal frequency division multiplexing (OFDM)-based integrated sensing and communication (ISAC) systems commonly extract target parameters by peak-searching a delay-Doppler map (DDM) constructed from reflected pilots. In multi-target scenarios, this results in ambiguity: the DDM does not reveal which physical target produced which peak, and two targets within the same delay-Doppler resolution cell cannot be separated. We propose a vision-assisted OFDM-ISAC framework that resolves both limitations by fusing wireless and visual modalities. The transmitter encodes an onboard street-view image with deep joint source-channel coding (DeepJSCC) and transmits it over the same OFDM waveform used for sensing; the receiver reconstructs the image, runs a fine-tuned YOLOv5 detector and fuses the resulting per-target features (bounding-box coordinates and class labels) with the DDM and transmitter-receiver geometry through a learned multi-modal network. To stabilize training of the high dimensional delay and Doppler classifiers, we introduce a Kullback Leibler loss against triangular soft labels centered on the ground-truth bin. On a Blender-rendered vehicular testbed, the proposed framework achieves a 16 cm localization root mean square error (RMSE) and a 10.8 ns delay RMSE. An ablation study confirms that removing the visual modality causes a 60x degradation in localization. These results highlight the potential of vision to overcome the data-association and resolution limits of single-modality ISAC.",
-    "published_date": "2026-06-20",
-    "updated_date": "2026-06-20",
-    "primary_category": "cs.CV",
-    "categories": [
-      "cs.CV",
-      "eess.SP"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2606.22195v1",
-    "comment": ""
-  },
-  {
-    "arxiv_id": "2606.21677",
-    "title": "Adaptive 5G Resource Allocation for Multistatic ISAC-Based UAV Detection and Tracking",
-    "authors": [
-      "Cole Dickerson",
-      "Wahab Khawaja",
-      "Ismail Guvenc"
-    ],
-    "abstract": "Unmanned aerial vehicles (UAVs) enable numerous commercial and public-safety applications, yet they also create security risks near critical infrastructure, transportation hubs, and restricted airspace. While integrated sensing and communications (ISAC) can leverage existing wireless networks for UAV surveillance, practical deployment must address competition between sensing and communication demands, as well as the challenges associated with tracking highly maneuverable UAVs with low radar cross section (RCS). This paper investigates adaptive multistatic ISAC for load-aware UAV detection and tracking in 5G wireless networks. A shared-resource framework is developed to quantify how sensing waveform length, sensing transmission rate, and beam allocation affect communication throughput in a 5G new radio (NR) system. Detection performance is analyzed using Zadoff-Chu (ZC) sensing waveforms, while tracking continuity is evaluated through an M-of-N detection model. To improve robustness under congestion, software-defined sensor (SDS) nodes exploit external signals of opportunity (SoO) to provide supplemental passive sensing opportunities when network resources become limited. Results show that adaptive sensing policies outperform fixed sensing reservations by preserving throughput under dynamic load while maintaining useful sensing capability. Under heavy congestion, SDS assistance substantially reduces tracking outage in the simulated scenarios. Cramer-Rao lower bound (CRLB) analysis demonstrates that multistatic sensing geometries improve localization accuracy and provide more uniform spatial coverage than monostatic sensing alone. These results highlight coordinated adaptive sensing and distributed multistatic support as a practical path toward resilient UAV surveillance in future wireless networks.",
-    "published_date": "2026-06-19",
-    "updated_date": "2026-06-19",
-    "primary_category": "eess.SP",
-    "categories": [
-      "eess.SP",
-      "eess.SY"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2606.21677v1",
-    "comment": "Accepted for publication in the Proceedings of the IEEE/AIAA 45th Digital Avionics Systems Conference (DASC 2026). 10 pages, 9 figures"
-  },
-  {
     "arxiv_id": "2609.32715",
     "title": "Secure Near-Field ISAC with Pinching-Antenna Systems: Exploiting Constructive-Destructive Interference",
     "authors": [
@@ -2535,6 +2411,26 @@
     "comment": ""
   },
   {
+    "arxiv_id": "2608.02169",
+    "title": "Performance Analysis and Joint Beamforming for Hybrid RIS-Aided Massive MIMO ISAC",
+    "authors": [
+      "Smriti Uniyal",
+      "Tianyu Fang",
+      "Marco Di Renzo",
+      "Markku Juntti",
+      "Nhan Thanh Nguyen"
+    ],
+    "abstract": "In integrated sensing and communication (ISAC) systems, stringent sensing performance constraints can severely limit the power available for communication. Hybrid reconfigurable intelligent surfaces (HRISs) with capabilities of both passive reflection and active signal amplification can significantly improve communication performance in the power-limited regime. This motivates us to analyze and optimize the performance of an HRIS-aided multiple-input-multiple-output (mMIMO) ISAC system. We first estimate the effective uplink/downlink channels using the minimum mean square error method. We then derive closed-form expressions for the communication sum-rate and sensing Cramér-Rao lower bound (CRLB). It is shown that under the equal power allocation strategy, the CRLB remains independent of the HRIS coefficients. Then, we formulate a joint optimization problem of power allocation and HRIS beamforming to maximize the communication sum-rate while ensuring specified sensing CRLB constraints. To solve the formulated non-convex problem, we propose an alternating optimization algorithm based on fractional programming and successive convex approximation. Extensive simulations validate our analysis and proposed algorithm, showing significant improvements in both communication and sensing performances enabled by the HRIS. For example, an HRIS with only $4$ active elements offers $97.30\\%$ improvement in the communication sum-rate, while ensuring a sensing CRLB constraint of $-30$ dB.",
+    "published_date": "2026-08-03",
+    "updated_date": "2026-08-03",
+    "primary_category": "eess.SP",
+    "categories": [
+      "eess.SP"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2608.02169v1",
+    "comment": ""
+  },
+  {
     "arxiv_id": "2607.29137",
     "title": "Bistatic Integrated Sensing and Communications with Flexible Intelligent Metasurfaces",
     "authors": [
@@ -2554,6 +2450,26 @@
     ],
     "pdf_url": "https://arxiv.org/pdf/2607.29137v1",
     "comment": "Conference paper in IEEE WSA 2026"
+  },
+  {
+    "arxiv_id": "2607.27778",
+    "title": "Green Cell-Free Massive MIMO for ISAC: Joint Cloud, Fronthaul and Radio Resource Allocation",
+    "authors": [
+      "Zinat Behdad",
+      "Özlem Tuğfe Demir",
+      "Ki Won Sung",
+      "Pei Xiao",
+      "Cicek Cavdar"
+    ],
+    "abstract": "In this paper, we develop a cross-layer end-to-end (E2E) resource orchestration framework for green cell-free massive multiple-input multiple-output (CF-mMIMO) integrated sensing and communication (ISAC) systems with distributed multi-target detection. We propose a distributed sensing approach in which receive access points (RX-APs) compute local test statistics, which are aggregated at the cloud using weights based on sensing interference and channel quality. We derive the local maximum a posteriori ratio test (MAPRT) detectors under fully informed and partially informed operation, representing different levels of transmit-signal information at the RX-APs. We further characterize their processing and fronthaul requirements and derive a network power model incorporating radio transmission, AP and cloud processing, and fronthaul infrastructure. We formulate a mixed-integer non-convex problem that jointly optimizes transmit powers, AP modes, user equipment (UE) and sensing-area associations, RX-AP assignments, and active fronthaul and cloud resources subject to communication, sensing, power, processing-capacity, and fronthaul constraints. A two-stage iterative algorithm based on Big-M reformulation, convex- concave programming, penalty-based relaxation, and structured discrete recovery is developed. Numerical results show that the proposed E2E framework reduces total power by up to 50% compared with transmit-power-only optimization and by approximately 11-17% compared with joint radio optimization under full coordination, while maintaining detection probabilities above 0:95.",
+    "published_date": "2026-07-30",
+    "updated_date": "2026-10-21",
+    "primary_category": "cs.IT",
+    "categories": [
+      "cs.IT"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.27778v3",
+    "comment": "13 pages"
   },
   {
     "arxiv_id": "2607.17862",
@@ -2848,49 +2764,6 @@
     "comment": "This work has been accepted for publication in the 2026 IEEE 27th International Workshop on Signal Processing and Artificial Intelligence for Wireless Communications (SPAWC), Athens, Greece"
   },
   {
-    "arxiv_id": "2604.07150",
-    "title": "CRB-Based Waveform Optimization for MIMO ISAC Systems With One-Bit ADCs",
-    "authors": [
-      "Qi Lin",
-      "Hong Shen",
-      "Wei Xu",
-      "Chunming Zhao"
-    ],
-    "abstract": "This paper studies the transmit waveform optimization for a quantized multiple-input multiple-output (MIMO) integrated sensing and communication (ISAC) system, where one-bit analog-to-digital converters (ADCs) are employed to enable a low-cost and power-efficient hardware implementation. Focusing on the parameter estimation task, we propose two novel Cramér-Rao bounds (CRBs) for both point-like target (PT) and extended target (ET) to characterize the impact of quantization distortion on the estimation accuracy, where associated estimation methods are also developed to approach these theoretical CRBs. Moreover, with the goal of jointly enhancing the sensing and communication performances, we formulate the bi-criterion ISAC waveform optimization problem by minimizing the derived CRB objectives subject to a communication symbol error probability (SEP) constraint and a total power constraint, which, due to the high nonlinearity of the one-bit CRBs, are extremely nonconvex. To yield a high-quality suboptimal solution, we develop an effective alternating direction method of multipliers (ADMM) framework which exploits the majorization-minimization (MM) technique to address the nonconvex issue. Simulation results verify that the one-bit CRBs are tight for characterizing the quantized estimation performance and the proposed estimation methods also show clear performance advantages over the existing benchmark schemes. Furthermore, a flexible trade-off between the CRB and the SEP performance can be achieved by the developed ADMM framework, demonstrating the effectiveness of the optimized ISAC waveform.",
-    "published_date": "2026-04-08",
-    "updated_date": "2026-09-25",
-    "primary_category": "eess.SP",
-    "categories": [
-      "eess.SP"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2604.07150v2",
-    "comment": "Accepted for publication in IEEE Internet of Things Journal"
-  },
-  {
-    "arxiv_id": "2604.05797",
-    "title": "Near-Field Integrated Sensing, Computing and Semantic Communication in Digital Twin-Assisted Vehicular Networks",
-    "authors": [
-      "Yinchao Yang",
-      "Yahao Ding",
-      "Jiaxiang Wang",
-      "Zhaohui Yang",
-      "Chen Zhu",
-      "Zhaoyang Zhang",
-      "Dusit Niyato",
-      "Mohammad Shikh-Bahaei"
-    ],
-    "abstract": "Digital twin (DT) technology offers transformative potential for vehicular networks, enabling high-fidelity virtual representations for enhanced safety and automation. However, seamless DT synchronization in dynamic environments faces challenges such as massive data transmission, precision sensing, and strict computational constraints. This paper proposes an integrated sensing, computing, and semantic communication (ISCSC) framework tailored for DT-assisted vehicular networks in the near-field (NF) regime. Leveraging a multi-user multiple-input multiple-output (MU-MIMO) configuration, each roadside unit (RSU) employs semantic communication to serve vehicles while simultaneously utilizing millimeter-wave (mmWave) radar for environmental mapping. We implement particle filtering at RSUs to achieve high-precision vehicle tracking. To optimize performance, we formulate a joint optimization problem balancing semantic communication rates and sensing accuracy under limited computational resources and power budget. Our solution includes a hybrid heuristic algorithm for vehicle-to-RSU assignment and an alternating optimization approach for determining semantic extraction ratios and beamforming matrices. Performance is extensively evaluated via the Cramér-Rao bound (CRB) for angle and distance estimation, semantic transmission rates, and resource utilization. Numerical results demonstrate that the proposed ISCSC framework achieves a 20% improvement in transmission rate while maintaining the sensing accuracy of existing integrated sensing and communication (ISAC) schemes under constrained resource conditions.",
-    "published_date": "2026-04-07",
-    "updated_date": "2026-04-07",
-    "primary_category": "cs.IT",
-    "categories": [
-      "cs.IT",
-      "eess.SP"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2604.05797v1",
-    "comment": "Accepted by IEEE Transactions on Vehicular Technology"
-  },
-  {
     "arxiv_id": "2608.25803",
     "title": "Generative AI-Enabled Mission-Aware Radio Orchestration for RIS-Assisted LEO Satellite ISAC Systems",
     "authors": [
@@ -2928,6 +2801,28 @@
     "comment": ""
   },
   {
+    "arxiv_id": "2608.04361",
+    "title": "RIS-Enabled Energy-Efficient ISAC for Vehicular Applications",
+    "authors": [
+      "Shengyu Yang",
+      "Yuhan Wang",
+      "Shuhao Zeng",
+      "Haobo Zhang",
+      "Boya Di",
+      "Lingyang Song"
+    ],
+    "abstract": "By incorporating integrated sensing and communication (ISAC) into vehicle-to-infrastructure (V2I) networks, roadside units (RSUs) can support data transmission while providing additional sensing capabilities, thereby enabling intelligent transportation services. By deploying large-scale antenna arrays at RSU, the V2I network can realize more reliable connectivity and more accurate vehicle tracking by harnessing the significant beamforming gains provided by the enlarged antenna aperture. However, it is not energy efficient to realize such arrays using conventional phased arrays, which rely on numerous power-hungry phase shifters. To address this, this demo presents the first reconfigurable intelligent surface (RIS)-based ISAC-empowered vehicular network prototype, which operates at sub-6 GHz band to be compatible with existing vehicular systems. The RIS has a low power consumption of 6.8W. Experimental results show that compared with the system without RIS, the proposed RIS-based prototype enables more accurate vehicle trajectory tracking with an average localization error of 0.11m and supports more robust data transmission, as evidenced by a 41.9% reduction in error vector magnitude (EVM). These results validate the effectiveness of the RIS-based ISAC system for supporting vehicular networks.",
+    "published_date": "2026-08-05",
+    "updated_date": "2026-08-05",
+    "primary_category": "eess.SP",
+    "categories": [
+      "eess.SP",
+      "eess.SY"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2608.04361v1",
+    "comment": ""
+  },
+  {
     "arxiv_id": "2608.04133",
     "title": "Geometry-Informed Optimization of Binary RIS Configurations for Communication and Sensing",
     "authors": [
@@ -2948,6 +2843,26 @@
     ],
     "pdf_url": "https://arxiv.org/pdf/2608.04133v1",
     "comment": ""
+  },
+  {
+    "arxiv_id": "2608.01809",
+    "title": "Multi-Hop RIS ISAC for Target Positioning: A Tensor Decomposition-based Approach",
+    "authors": [
+      "Yirui Luo",
+      "Xiaoyan Ma",
+      "Yong Liang Guan",
+      "Christopher G. Brinton",
+      "Chau Yuen"
+    ],
+    "abstract": "Reconfigurable intelligent surface (RIS) has demon- strated remarkable potential to enhance the performance of integrated sensing and communication (ISAC), particularly when the line-of-sight (LoS) paths are obstructed. By controlling the reconfigurable elements on the surface, RIS can establish virtual LoS paths and provide considerable passive beamforming gains, thereby significantly improving the received signal quality. In this paper, we design a novel multi-hop RIS ISAC system for target positioning, where multiple RISs are deployed to assist the communication from a transmitter to associated users while simultaneously enhancing receiver sensing performance in target positioning. Specifically, we formulate an optimization problem to minimize the root mean square error (RMSE) of the target detection while guaranteeing the communication requirements of the users. To solve this problem, we first unfold the cascaded sens- ing channel through parallel factor decomposition, and develop a low-rank CANDECOMP/PARAFAC decomposition (CPD)-based scheme to extract the location parameters (i.e., angle of arrival, angle of departure and delay) of the sensing targets. Then, we develop a scheme for jointly selecting the transmit beamforming and RIS phase shift configurations to maximize the sensing energy at the receiver, which in turn leads to improved accuracy in target positioning. We also provide a uniqueness analysis, complexity analysis, and Cramér-Rao lower bound (CRLB) of the parameters estimated by our methodology. Simulation results validate the improvement in target positioning obtained by our design relative to baselines.",
+    "published_date": "2026-08-03",
+    "updated_date": "2026-08-03",
+    "primary_category": "eess.SP",
+    "categories": [
+      "eess.SP"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2608.01809v1",
+    "comment": "Accepted by IEEE TWC"
   },
   {
     "arxiv_id": "2607.28081",
@@ -3112,6 +3027,23 @@
     ],
     "pdf_url": "https://arxiv.org/pdf/2607.03637v1",
     "comment": "13 pages, 9 figures, Under review for possible publication"
+  },
+  {
+    "arxiv_id": "2606.28924",
+    "title": "Communication-Centric RIS-Assisted ISAC: Signal Modeling and BER Analysis",
+    "authors": [
+      "Yosefine Triwidyastuti",
+      "Tri Nhu Do"
+    ],
+    "abstract": "We propose and analyze a communication-centric reconfigurable intelligent surface (RIS)-assisted integrated sensing and communication (ISAC) system, in which a monostatic radar simultaneously senses a moving target and serves a user equipment (UE) over Nakagami-m fading. We design a dual-function phase-modulated continuous-wave (PMCW) waveform that embeds the data stream directly into the radar pulse train: each pulse carries one full maximum-length sequence whose polarity is flipped by a binary phase-shift keying data symbol, so that the same emission preserves the sharp range autocorrelation required for sensing while conveying one bit per pulse to the UE. We further propose a communication-centric RIS phase configuration that co-phases each element onto the direct radar-to-UE path, yielding a coherent superposition at the UE and a received-power gain that scales with the square of the number of elements. We show that from the radar's perspective, however, the same surface behaves as an uncontrolled scatterer, since the resulting reflection paths are mis-phased and do not benefit from array combining. We derive a closed-form approximation for the average UE bit error rate based on a moment-matched Gamma approximation, and we show that the same waveform still forms a usable range-Doppler map for sensing. Monte-Carlo simulations corroborate the analytical results.",
+    "published_date": "2026-06-27",
+    "updated_date": "2026-06-27",
+    "primary_category": "eess.SP",
+    "categories": [
+      "eess.SP"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.28924v1",
+    "comment": ""
   },
   {
     "arxiv_id": "2606.23125",
@@ -3466,41 +3398,25 @@
     "comment": "5 pages, 5 figures, accepted by IEEE Wireless Communications Letters"
   },
   {
-    "arxiv_id": "2601.18063",
-    "title": "Secure Beamforming and Reflection Design for RIS-ISAC Systems Under Collusion of Passive and Active Eavesdroppers",
+    "arxiv_id": "2607.00632",
+    "title": "Frame-Based AFDM-ISAC Waveform Design With Chirp-Enabled Pulse Compression",
     "authors": [
-      "Yueyi Dong",
-      "Tian Zhang"
+      "Qu Luo",
+      "Zilong Liu",
+      "Musavian Leila",
+      "Thomos Nikolaos",
+      "Qihao Peng",
+      "Pei Xiao"
     ],
-    "abstract": "In the paper, the physical-layer security for reconfigurable intelligent surface (RIS) aided integrated sensing and communication (ISAC) system is studied. There is an active eavesdropper (AE) as well as a passive eavesdropper (PE), and they cooperate each other. By joint base station beamforming and RIS reflection design, we aim to achieve the best secure data communications with guaranteed sensing performance. Mathematically, taking the constraints on sensing performance and transmission power in consideration, the system secrecy rate maximization problem is formulated with respect to transmit beamforming, RIS reflection, and receive beamforming. The formulated problem is non-convex and is decomposed to three subproblems by applying the alternating optimization (AO). For the decomposed subproblem, we utilize the quadratic penalty method and successive convex approximation (SCA) for the solution derivation. Thereafter, an iterative numerical algorithm, referred to as the joint beamforming and reflection design (JBRD) algorithm, is proposed. Finally, numerical results demonstrate the effectiveness and superiority of the proposed algorithm.",
-    "published_date": "2026-01-26",
-    "updated_date": "2026-05-08",
-    "primary_category": "cs.IT",
+    "abstract": "This paper proposes an Affine frequency division multiplexing (AFDM)-empowered integrated sensing and communications (ISAC) design, referred to as AFDM-ISAC. We first design a novel AFDM-ISAC frame structure that consists of both ISAC and pure data symbols. Each ISAC symbol consists of a single chirp subcarrier for both sensing and channel estimation, while the remaining subcarriers are allocated for communication. Building upon this structure, we present an analog-domain sensing receiver that down-mixes the received echo with a local chirp to fully exploit \\textit{chirp compression} gains avoiding the need for full-duplex hardware. In addition, a sensing fusion algorithm, guided by AFDM modulation parameters, is further proposed in the digital domain. Leveraging the distinct features of the proposed AFDM-ISAC frame, we present a low-complexity channel estimation scheme for high mobility channels based on a generalized complex exponential basis expansion model (GCE-BEM), along with an optimal power allocation strategy between pilot and data symbols. Moreover, to support frame-based AFDM communications, a GCE-BEM-based Kalman filter is also employed for robust intra-frame channel estimation.",
+    "published_date": "2026-07-01",
+    "updated_date": "2026-07-01",
+    "primary_category": "eess.SP",
     "categories": [
-      "cs.IT"
+      "eess.SP"
     ],
-    "pdf_url": "https://arxiv.org/pdf/2601.18063v4",
-    "comment": "There was an error in the proof of Lemma 1 in the Appendix. Then Lemma 1 in Section IV A does not hold"
-  },
-  {
-    "arxiv_id": "2601.16033",
-    "title": "RIS-Aided Cooperative ISAC Network for Imaging-Based Low-Altitude Surveillance",
-    "authors": [
-      "Zhixin Chen",
-      "Yixuan Huang",
-      "Zhengze Ji",
-      "Jie Yang",
-      "Shi Jin"
-    ],
-    "abstract": "The low-altitude economy is integral to the advancement of numerous sectors, necessitating the development of advanced low-altitude surveillance techniques. Nevertheless, conventional methods encounter limitations of high deployment costs and low signal strength. This study proposes a reconfigurable intelligent surface (RIS)-aided cooperative integrated sensing and communication (ISAC) network for low-altitude surveillance. This network employs RISs to reflect ISAC signals into low-altitude space for sensing. To enhance signal strength, we employ active RIS (ARIS) to amplify the signals. Moreover, in order to avoid error propagation and data association in traditional sensing methods, we model low-altitude surveillance as an imaging problem based on compressed sensing theory, which can be solved through the subspace pursuit algorithm. We derive the Cramer-Rao lower bound (CRLB) of the proposed RIS-aided low-altitude imaging system and analyze the impacts of various system parameters on sensing performance, providing guidance for ISAC system configuration. Numerical results show that ARIS outperforms passive RIS under identical power constraints, achieving effective imaging and target detection at altitudes up to 300 meters.",
-    "published_date": "2026-01-22",
-    "updated_date": "2026-01-22",
-    "primary_category": "cs.IT",
-    "categories": [
-      "cs.IT"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2601.16033v1",
-    "comment": "Accepted by China Communications"
+    "pdf_url": "https://arxiv.org/pdf/2607.00632v1",
+    "comment": ""
   },
   {
     "arxiv_id": "2606.17306",
@@ -4057,6 +3973,24 @@
     "comment": ""
   },
   {
+    "arxiv_id": "2610.09080",
+    "title": "User-Target Pairing for NOMA-Enabled ISAC in Low-Altitude Wireless Networks",
+    "authors": [
+      "Irfan Azam",
+      "Muddasir Rahim",
+      "Soumaya Cherkaoui"
+    ],
+    "abstract": "This paper presents a non-orthogonal multiple access (NOMA)-enabled integrated sensing and communication (ISAC) framework for low-altitude wireless networks (LAWN), where an aerial access point simultaneously serves ground users and senses aerial targets. To improve both communication efficiency and sensing reliability, a matching-based user-target pairing (MUTP) scheme is proposed, in which strong and weak channel NOMA users are first paired into NOMA groups and then assigned to sensing targets according to a sensing-aware pairing criterion. Furthermore, an adaptive power allocation (APA) strategy is developed to balance communication quality-of-service requirements and target detection performance. The proposed MUTP-APA scheme is compared with fixed greedy pairing, exhaustive search pairing, and conventional ISAC benchmark schemes under both fixed power allocation and APA. Simulation results show that our proposed scheme achieves higher sum rate, improved worst-target detection probability, and lower communication and sensing outage probabilities compared with conventional ISAC and fixed pairing baselines in NOMA-ISAC LAWN. Moreover, the proposed method closely approaches the exhaustive search benchmark while avoiding the high computational complexity.",
+    "published_date": "2026-10-06",
+    "updated_date": "2026-10-06",
+    "primary_category": "eess.SP",
+    "categories": [
+      "eess.SP"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.09080v1",
+    "comment": ""
+  },
+  {
     "arxiv_id": "2607.18893",
     "title": "Flexible Intelligent Metasurface-Aided ISAC: User Fairness Optimization and Performance Evaluation",
     "authors": [
@@ -4550,13 +4484,13 @@
     ],
     "abstract": "Resource allocation in integrated sensing and communication (ISAC) systems needs to be optimized to balance the requirements of the communication and sensing modules considering complicated cross-layer data traffic and queue status in dynamic multi-user environments. This paper studies the beam allocation for cross-layer ISAC that achieves low-latency communication and minimizes sensing parameters estimation error. To handle the complex coupling between practical data buffer dynamics and varying wireless channels, we propose a deep reinforcement learning (DRL)-assisted approach. Rather than relying on explicit channel state information, the DRL-assisted beam allocation reduces feedback overhead by leveraging sensing observations. Simulation results verify that the DRL framework effectively takes buffer status into account and adapts to the wireless environment while allocating resources. The proposed multi-beam scheme improves overall throughput with only modest delay increases. Finally, the DRL-assisted beam management achieves both communication and sensing performance close to that of the genie-aided benchmark with perfect angle-of-departure (AoD) knowledge. These contributions advance the state-of-the-art intelligent resource management for ISAC systems.",
     "published_date": "2026-04-27",
-    "updated_date": "2026-04-27",
+    "updated_date": "2026-10-22",
     "primary_category": "eess.SP",
     "categories": [
       "eess.SP",
       "cs.NI"
     ],
-    "pdf_url": "https://arxiv.org/pdf/2604.24369v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.24369v2",
     "comment": ""
   },
   {
@@ -4942,24 +4876,6 @@
     ],
     "pdf_url": "https://arxiv.org/pdf/2506.23473v1",
     "comment": "13 pages, 10 figures"
-  },
-  {
-    "arxiv_id": "2506.23000",
-    "title": "Communication via Sensing",
-    "authors": [
-      "Mohammad Kazemi",
-      "Tolga M. Duman",
-      "Deniz Gündüz"
-    ],
-    "abstract": "We present an alternative take on the recently popularized concept of `\\textit{joint sensing and communications}', which focuses on using communication resources also for sensing. Here, we propose the opposite, where we utilize the receiver's sensing capabilities for communication. Our goal is to characterize the fundamental limits of communication over such a channel, which we call `\\textit{communication via sensing}'. We assume that changes in the sensed attributes, such as location and speed, are limited due to practical constraints, which are captured by assuming a finite-state channel (FSC) with an input cost constraint. We first formulate an upper bound on the \\(N\\)-letter capacity as a cost-constrained optimization problem over the input sequence distribution, and then convert it to an equivalent problem over the state sequence distribution. Moreover, by breaking a walk on the underlying Markov chain into a weighted sum of traversed graph cycles in the long walk limit, we obtain a compact single-letter formulation of the capacity upper bound. Finally, for a specific case of a two-state FSC with noisy sensing characterized by a binary symmetric channel (BSC), we obtain a closed-form expression for the capacity upper bound. Comparison with an existing numerical lower bound shows that our proposed upper bound is very tight for all crossover probabilities.",
-    "published_date": "2025-06-28",
-    "updated_date": "2025-07-27",
-    "primary_category": "cs.IT",
-    "categories": [
-      "cs.IT"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2506.23000v2",
-    "comment": ""
   },
   {
     "arxiv_id": "2609.22994",
@@ -5716,24 +5632,44 @@
     "comment": "6 pages, 13 figures. Accepted for publication at the 2024 IEEE 35th International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC)"
   },
   {
-    "arxiv_id": "2507.01427",
-    "title": "SDR-Empowered Environment Sensing Design and Experimental Validation Using OTFS-ISAC Signals",
+    "arxiv_id": "2610.11172",
+    "title": "2D Coprime Pilots for Delay-Doppler Sensing in OFDM-ISAC Systems",
     "authors": [
-      "Jun Wu",
-      "Yuye Shi",
-      "Weijie Yuan",
-      "Qingqing Cheng",
-      "Buyi Li",
-      "Xinyuan Wei"
+      "Guanping Shang",
+      "Zeyan Zhuang",
+      "Anzheng Tang",
+      "Shenghui Song",
+      "Chi-Ying Tsui"
     ],
-    "abstract": "This paper investigates the system design and experimental validation of integrated sensing and communication (ISAC) for environmental sensing, which is expected to be a critical enabler for next-generation wireless networks. We advocate exploiting orthogonal time frequency space (OTFS) modulation for its inherent sparsity and stability in delay-Doppler (DD) domain channels, facilitating a low-overhead environment sensing design. Moreover, a comprehensive environmental sensing framework is developed, encompassing DD domain channel estimation, target localization, and experimental validation. In particular, we first explore the OTFS channel estimation in the presence of fractional delay and Doppler shifts. Given the estimated parameters, we propose a three-ellipse positioning algorithm to localize the target's position, followed by determining the mobile transmitter's velocity. Additionally, to evaluate the performance of our proposed design, we conduct extensive simulations and experiments using a software-defined radio (SDR)-based platform with universal software radio peripheral (USRP). The experimental validations demonstrate that our proposed approach outperforms the benchmarks in terms of localization accuracy and velocity estimation, confirming its effectiveness in practical environmental sensing applications.",
-    "published_date": "2025-07-02",
-    "updated_date": "2025-07-02",
+    "abstract": "Integrated Sensing and Communication (ISAC) is envisioned to endow future 6G systems with seamless sensing capabilities. To support efficient sensing with minimum communication overhead, sparse pilots embedded within communication frames have emerged as a promising solution. Along this line of research, existing studies have achieved engaging results in maximizing the unambiguous sensing region. However, jointly maximizing the sensing region and sensing accuracy remains challenging due to the lack of a unified performance metric and an effective pilot design framework. This paper jointly optimizes the unambiguous sensing region and sensing accuracy for estimating delay-Doppler (DD) parameters in Orthogonal Frequency Division Multiplexing (OFDM)-ISAC systems, where sensing mutual information (SMI) is adopted as a unified performance metric to characterize the overall sensing capability. Specifically, the joint optimization is formulated as an SMI maximization problem by systematically resolving sensing ambiguity and optimizing sensing accuracy. In particular, based on the generalized Bezout identity, we derive a 2D (timefrequency) coprime condition, which, as far as the authors know, is the first necessary and sufficient condition to achieve the unique estimation of DD parameters in the literature. Under this unambiguous condition, we further propose an Adam-Guided Iterative Refinement (AGIR) algorithm to optimize the sensing accuracy. Numerical results demonstrate the advantage of the proposed framework over existing designs, owing to the freedom offered by the 2D coprime condition in optimizing the sensing accuracy.",
+    "published_date": "2026-10-08",
+    "updated_date": "2026-10-08",
     "primary_category": "eess.SP",
     "categories": [
       "eess.SP"
     ],
-    "pdf_url": "https://arxiv.org/pdf/2507.01427v1",
+    "pdf_url": "https://arxiv.org/pdf/2610.11172v1",
+    "comment": "This paper has been submitted to IEEE journal"
+  },
+  {
+    "arxiv_id": "2610.05527",
+    "title": "Bistatic ISAC under Data Payload Uncertainty",
+    "authors": [
+      "Musa Furkan Keskin",
+      "Silvia Mura",
+      "Marouan Mizmizi",
+      "Dario Tagliaferri",
+      "Fan Liu",
+      "Henk Wymeersch"
+    ],
+    "abstract": "We investigate the problem of data payload uncertainty (DPU) in bistatic integrated sensing and communication (ISAC) systems, which refers to imperfect knowledge of transmit data symbols at the sensing receiver. DPU may result from limited fronthaul capacity in base station (BS)-to-BS bistatic sensing or data demodulation errors in BS-to-user equipment (UE) bistatic sensing, and can impair target detection through elevated sidelobe levels in the delay-Doppler domain. To characterize this effect, we derive closed-form expressions for the peak-to-sidelobe level ratio (PSLR) of two common OFDM receivers, namely reciprocal filtering (RF) and matched filtering (MF), under DPU. The analysis shows that the DPU-induced sidelobe degradation of RF depends on the inverse second-, fourth-, and sixth-order constellation moments, whereas that of MF depends only on the direct fourth-order moment, making RF considerably more vulnerable to DPU. To mitigate the resulting sidelobes, we further propose a novel, DPU-aware minimum mean-squared-error (MMSE) receiver. Simulation results validate the PSLR analysis and demonstrate superior detection performance of MMSE over RF and MF while revealing the extent to which it can recover DPU-induced performance loss relative to a genie-aided receiver with perfect knowledge of data payload.",
+    "published_date": "2026-10-04",
+    "updated_date": "2026-10-04",
+    "primary_category": "eess.SP",
+    "categories": [
+      "eess.SP"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.05527v1",
     "comment": ""
   },
   {
@@ -6369,46 +6305,78 @@
     "comment": "submitted to ieee for possible publication"
   },
   {
-    "arxiv_id": "2605.00249",
-    "title": "The Resurrection of Spectrum Spreading for 6G and Beyond: From Sinusoids to Chirps",
+    "arxiv_id": "2610.11987",
+    "title": "Joint Pinching-Antenna Position and Power Optimization for Dual-Waveguide ISAC Systems",
     "authors": [
-      "Hyeon Seok Rou",
-      "Giuseppe Thadeu Freitas de Abreu",
-      "Emil Björnson",
-      "Sunwoo Kim",
-      "Marios Kountouris"
+      "Saeid Pakravan",
+      "Imene Trigui",
+      "Wessam Ajib",
+      "Wei-Ping Zhu"
     ],
-    "abstract": "Orthogonal frequency-division multiplexing (OFDM) and its sinusoidal subcarriers have underpinned the 4G and 5G eras, delivering high spectral efficiency and resilience to multipath fading through an efficient multicarrier architecture. However, as future systems move toward doubly dispersive environments driven by high-mobility applications and migration to mmWave/sub-THz bands, the time-invariance assumption underlying OFDM becomes increasingly difficult to maintain, and Doppler-induced degradation becomes prominent. While enhancements such as MIMO, advanced coding, and scheduling provide incremental remedies, they introduce additional overhead, because the sinusoidal subcarrier itself offers no inherent waveform-level robustness to Doppler impairments. Accordingly, two time-frequency spreading philosophies have emerged to improve Doppler resilience by distributing each symbol's energy across both dimensions of the time-frequency plane: (i) 2D isotropic spreading via the delay-Doppler (DD) domain, exemplified by the orthogonal time frequency space (OTFS) family, and (ii) sheared spreading via parameterizable chirps, exemplified by the affine frequency-division multiplexing (AFDM) family. In this article, we examine key considerations for future waveform design across these paradigms and argue that transitioning from the sinusoidal subcarriers of OFDM to the chirp-based subcarriers offers a viable design direction for improving Doppler robustness while retaining much of the mature OFDM infrastructure. This perspective also highlights the suitability of chirp-based waveforms for integrated sensing and communications (ISAC) and their extensibility to emerging physical-layer techniques. Overall, we argue that the transition from sinusoids to chirps is a technically motivated, compelling evolutionary direction for future wireless physical layer design.",
-    "published_date": "2026-04-30",
-    "updated_date": "2026-09-05",
+    "abstract": "Pinching-antenna (PA) systems provide spatial reconfigurability for integrated sensing and communication (ISAC) through controllable radiation locations along dielectric waveguides. This paper investigates a dual-waveguide PA-assisted ISAC system in which the communication user also serves as the sensing target, coupling the communication and sensing links through a common user/target geometry. Spatially separated transmit and receive waveguides provide separate spatial control over the forward and return sensing paths. We jointly optimize the transmit and receive PA positions and transmit power to maximize the aggregate communication rate subject to minimum sensing-SNR and two-dimensional localization Cramer-Rao bound (CRB) requirements, along with power, energy, and deployment constraints. To solve the resulting non-convex problem, we develop an alternating optimization algorithm that combines a bounded water-filling power update with a proximal first-order joint PA-position update. Numerical results show that the proposed design achieves higher communication rates than the considered benchmarks, with more pronounced gains under stringent localization requirements.",
+    "published_date": "2026-10-08",
+    "updated_date": "2026-10-08",
     "primary_category": "eess.SP",
     "categories": [
-      "eess.SP",
-      "cs.IT"
+      "eess.SP"
     ],
-    "pdf_url": "https://arxiv.org/pdf/2605.00249v2",
+    "pdf_url": "https://arxiv.org/pdf/2610.11987v1",
     "comment": ""
   },
   {
-    "arxiv_id": "2604.19709",
-    "title": "Networked Tracking of Multiple Moving Targets in 6G Network",
+    "arxiv_id": "2610.11434",
+    "title": "An Embodied Multiagent Framework Based on Token Communications for Cooperative ISAC",
     "authors": [
-      "Yanmo Hu",
-      "Weifeng Zhu",
-      "Chenshu Wu",
-      "Shuowen Zhang",
-      "J. Andrew Zhang",
-      "Liang Liu"
+      "Jiahe Guo",
+      "Jun Du",
+      "Chunxiao Jiang",
+      "Jintao Wang"
     ],
-    "abstract": "This paper considers a networked tracking architecture in 6G integrated sensing and communication (ISAC) systems, where multiple base stations (BSs) cooperatively transmit radio signals and process received echo signals to track multiple moving targets. Compared to the single-BS counterpart, networked tracking allows the moving targets to be associated with different BSs over time such that the wireless resources can be dynamically allocated among BSs based on target locations. However, networked tracking imposes new challenges for algorithm design and resource allocation. In this paper, we first design the networked Kalman Filter (NKF) that is suitable for multi-BS based tracking, then characterize the posterior Cramer-Rao bound (PCRB) under this NKF, and last design the beamforming vectors of all the BSs to minimize the tracking PCRB. Numerical results show that our dynamic beamforming design can properly associate the targets to the suitable BSs at various sensing blocks and reduce the tracking mean-squared error (MSE).",
-    "published_date": "2026-04-21",
-    "updated_date": "2026-04-21",
+    "abstract": "The emerging low-altitude economy demands unmanned aerial vehicle (UAV)-enabled integrated sensing and communication (ISAC) for reliable connectivity and environmental awareness. In particular, embodied UAV agents offer a promising means of supporting autonomous operations through a closed loop linking perception, decision-making, and physical actions. However, each UAV has access only to local observations, and effective cooperation requires exchanging local states and intentions. Directly sharing such information can incur substantial signaling overhead and hinder timely coordination in dynamic environments. To deal with this problem, this paper investigates a cooperative ISAC network of embodied UAV agents and formulates a joint token communications (TokCom) and physical control problem to minimize total propulsion energy subject to communication and sensing rate requirements. Then, we propose a state--intent TokCom (SI-TokCom) framework driven by multi-agent embodied policy learning. Specifically, separate pretrained codebooks enable compact exchanges of local states and intentions, while UAV agents jointly learn to select and compose tokens and determine physical actions based on local observations and received tokens. Simulation results show that SI-TokCom achieves 98.9\\% and 99.1\\% of the centralized baseline's communication and sensing rates, respectively. Compared with the local baseline, it improves the corresponding rates by 5.0\\% and 43.6\\%, respectively, with essentially unchanged propulsion energy. These results highlight the potential of TokCom for communication-efficient cooperation among embodied UAV agents in ISAC systems.",
+    "published_date": "2026-10-08",
+    "updated_date": "2026-10-08",
     "primary_category": "eess.SP",
     "categories": [
       "eess.SP",
-      "cs.IT"
+      "cs.MA"
     ],
-    "pdf_url": "https://arxiv.org/pdf/2604.19709v1",
+    "pdf_url": "https://arxiv.org/pdf/2610.11434v1",
+    "comment": "Submitted to TWC"
+  },
+  {
+    "arxiv_id": "2610.10994",
+    "title": "From Echoes to Evidence: Cooperative Fusion for Integrated Sensing and Communication",
+    "authors": [
+      "Xingqin Lin"
+    ],
+    "abstract": "Cooperative integrated sensing and communication (ISAC) can support shared situational awareness for unmanned aerial vehicles (UAVs), road vehicles, and industrial mobile robots such as automated guided vehicles (AGVs). Yet multipath can make nodes agree on a virtual target while useful weak echoes remain unexploited. This paper develops cooperative fusion that separates association confirmation, state refinement, and residual recovery. A cellular reference signal model accommodates arbitrary node counts, three-dimensional motion, monostatic and bistatic links, nuisance parameters, and correlated errors. We characterize report distinguishability under bounded bias and shared-reflector ambiguities that survive additional nodes. Minimax estimation yields directional weak-report refinement that preserves confirmed associations and limits bias-sensitive innovations; acquisition accounts for request and upload costs. Controlled experiments accompany UAV evaluations under a Third Generation Partnership Project (3GPP) stochastic channel model and a ray tracing environment representing San Francisco. In the latter environment, matched-budget fusion raises detection from observable site selection's 88.75% to 92.46% and reduces the false-output fraction from 11.06% to 0.40%. Against the strongest full-band fixed site, the 90th-percentile position error on commonly detected targets falls from 8.54 to 3.50 m. Association controls, local rejection ablations, and refinement studies distinguish the sources of these gains.",
+    "published_date": "2026-10-07",
+    "updated_date": "2026-10-07",
+    "primary_category": "cs.NI",
+    "categories": [
+      "cs.NI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.10994v1",
+    "comment": "13 pages, 10 figures, 4 tables"
+  },
+  {
+    "arxiv_id": "2610.08696",
+    "title": "Fundamental CRB-Rate Tradeoff of Rydberg Atomic Receivers for Integrated Sensing and Communication",
+    "authors": [
+      "Yin Zhang",
+      "Jiayi Zhang",
+      "Bokai Xu",
+      "Jieao Zhu",
+      "Bo Ai"
+    ],
+    "abstract": "Integrated sensing and communication (ISAC) is a key technology for next generation wireless networks, requiring highly sensitive, compact receiver front ends with multiband coverage. Rydberg atomic receivers (RARs) provide a promising architecture that satisfies these requirements owing to their high sensitivity and continuous frequency tuning capability. Unlike in classical ISAC systems utilizing orthogonal resource allocation, executing concurrent multi band tasks within a single atomic ensemble relies on shared energy state transitions. Owing to this shared structure, the communication and sensing tradeoff in RAR-based ISAC introduces an atomic-response tradeoff beyond the classical subspace and deterministic-random tradeoffs. This paper studies a multi-branch RAR (MB-RAR) architecture for joint communication and radar sensing. By solving the five level Lindblad master equation at the local oscillator (LO) biased operating point and linearizing the communication and sensing radio frequency (RF) signals as small perturbations, we obtain the double-sideband dynamic signal response of the MB-RAR. The model reveals two intrinsic constraints. First, increasing the coupling laser strength broadens the response bandwidth but can weaken the atomic response. Second, strengthening one branch's LO can suppress the other branch's conversion gain through the shared Rydberg state, even when the latter's LO bias remains fixed, which is termed the inter band gain inhibition (IBGI). Based on these mechanisms, we formulate the achievable Cramér--Rao bound (CRB)-rate region and develop a rate-constrained joint search over coupling strength and LO power allocation. Numerical results validate the proposed response model and show that joint optimization provides a more complete characterization of the achievable CRB-rate region.",
+    "published_date": "2026-10-06",
+    "updated_date": "2026-10-06",
+    "primary_category": "eess.SP",
+    "categories": [
+      "eess.SP"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.08696v1",
     "comment": ""
   },
   {
@@ -6562,92 +6530,6 @@
     "comment": "This manuscript has been submitted for consideration for publication"
   },
   {
-    "arxiv_id": "2608.25477",
-    "title": "AERIS: Offline Policy Improvement for Multi-UAV Integrated Sensing and Communication",
-    "authors": [
-      "Ziyuan Wang",
-      "Yifan Sui",
-      "Wei Wei",
-      "Wenjie Xin",
-      "Zekai Zhang",
-      "Xiangwang Hou",
-      "Xiao-Ping",
-      "Zhang"
-    ],
-    "abstract": "Unmanned aerial vehicle (UAV)-enabled integrated sensing and communication (ISAC) is a promising 6G paradigm, but dynamic multi-UAV ISAC control must jointly balance communication quality, sensing reliability, and flight safety under stochastic mobility. Existing optimization methods often require repeated global non-convex solving, while online reinforcement learning (RL) depends on risky trial-and-error flights that may cause sensing loss or collision-risk events. This paper proposes AERIS, an offline policy improvement framework for multi-UAV ISAC. AERIS learns from fixed flight logs under centralized training and decentralized execution, so each UAV acts from local histories while training uses logged global information to assess team-level effects. We further design STAR-CRDT, an offline multi-agent RL algorithm that performs support-aware local action rectification and distills only trusted improvements into the decentralized actor. We prove an offline-support policy improvement guarantee. Experiments show that STAR-CRDT improves the main ISAC objective return by 29.3% over the strongest baseline. It further improves communication sum rate, sensing pass rate, and sensing margin by 3.4%, 4.8%, and 69.1%, while reducing collision-risk events by 54.2%. On unseen real-road maps built from OpenStreetMap data, STAR-CRDT still obtains the best return.",
-    "published_date": "2026-08-26",
-    "updated_date": "2026-08-26",
-    "primary_category": "cs.NI",
-    "categories": [
-      "cs.NI",
-      "cs.LG"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2608.25477v1",
-    "comment": ""
-  },
-  {
-    "arxiv_id": "2608.21064",
-    "title": "Privacy-Preserving Localization via Transmit Antenna Selection and Permutation",
-    "authors": [
-      "Yiyang Zhang",
-      "Yanmo Hu",
-      "Junyuan Gao",
-      "Shuowen Zhang",
-      "Jiannong Cao",
-      "Liang Liu"
-    ],
-    "abstract": "Integrated sensing and communication (ISAC) has been identified as one primary usage scenario in the sixth-generation (6G) network. While techniques to preserve information privacy, such as cryptography, have been widely investigated, how to preserve sensing privacy is still an open problem in the literature. This paper makes an early attempt to tackle the above issue. Specifically, we consider a localization system consisting of a multi-antenna transmitter, termed Alice, a single-antenna legitimate receiver, termed Bob, and a single-antenna illegitimate receiver, termed Eve. To allow Bob to estimate Alice's angle-of-departure (AOD) but prevent Eve from performing this task based on Alice's signals, this paper proposes a novel antenna selection and permutation based transmission strategy for Alice. Under this scheme, Alice carefully selects a subset of antennas and permutes their indices to establish a specific pilot-antenna mapping for transmission. Similar to cryptography for information privacy, such a mapping will serve as the secret key to preserve localization privacy. In the special case without noise at Bob and Eve, we manage to find out all the antenna selection and permutation solutions such that with this key (knowledge about the exact pilot-antenna mapping), Bob can uniquely estimate Alice's AOD, while without this key, Eve can estimate multiple AODs of Alice that can lead to its received signals. In the noisy case, numerical results are provided to show that our scheme can confuse Eve to make inaccurate AOD estimation as well.",
-    "published_date": "2026-08-21",
-    "updated_date": "2026-08-21",
-    "primary_category": "eess.SP",
-    "categories": [
-      "eess.SP",
-      "cs.IT"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2608.21064v1",
-    "comment": ""
-  },
-  {
-    "arxiv_id": "2608.18902",
-    "title": "Towards Lawful ISAC in Cellular Networks",
-    "authors": [
-      "Stefano Tomasin",
-      "Annalisa Volpato",
-      "Marco Centenaro"
-    ],
-    "abstract": "Integrated sensing and communication (ISAC) enables the tracking and detection of passive objects, including the human body, by leveraging standard wireless communication signals. While already standardized in IEEE 802.11bf for Wi-Fi, ISAC is currently being defined by 3GPP for the upcoming generations of cellular networks. This transition scales the ISAC technology from localized, uncoordinated Wi-Fi deployments into a pervasive, centralized network deployment managed by mobile network operators. However, such nationwide coverage introduces critical user privacy challenges that must comply with stringent data protection legislative frameworks, most notably the General Data Protection Regulation in the European Union. This paper provides a comprehensive analysis of applicable norms to cellular ISAC, highlights the open technical challenges in its implementation, and explores potential mitigation strategies at both the architectural and signal processing levels, establishing tiered data access levels for various stakeholder categories and detailing how these protocols can be lawfully integrated into cellular network architectures.",
-    "published_date": "2026-08-19",
-    "updated_date": "2026-08-19",
-    "primary_category": "eess.SP",
-    "categories": [
-      "eess.SP"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2608.18902v1",
-    "comment": ""
-  },
-  {
-    "arxiv_id": "2608.16167",
-    "title": "RadioVIL: Anomaly-Aware Diffusion Models for Radio Map Inpainting and Zero-Shot Vehicle Localization",
-    "authors": [
-      "Ruixin Zhao",
-      "Xiucheng Wang",
-      "Qiming Zhang",
-      "Nan Cheng",
-      "Ruijin Sun",
-      "Conghao Zhou"
-    ],
-    "abstract": "High-precision radio map construction is essential for emerging 6G Integrated Sensing and Communication (ISAC) applications, including digital twins and intelligent transportation. However, existing deep learning methods predominantly treat this as a pure image completion task, resulting in over-smoothed reconstructions that fundamentally erase high-frequency scattering signatures of dynamic physical entities such as hidden vehicles. To overcome this, we propose RadioVIL, an efficient two-stage framework that reformulates joint radio map inpainting and zero-shot vehicle localization as a prior-guided physical inverse problem. Specifically, we first train a Denoising Diffusion Probabilistic Model (DDPM) to capture the structural generative prior of the environment. During inference from highly sparse measurements, we employ a Diffusion-based Mediating Intermediate Layer Optimization (DMILO) algorithm. By optimizing an L1-regularized sparse deviation term, DMILO mathematically isolates vehicle scattering anomalies layer-by-layer without unfolding the entire denoising chain. Extensive experiments demonstrate that while conventional reconstruction baselines fail to detect hidden vehicles, and the zero-shot diffusion baseline achieves only limited detection ability due to forced semantic harmonization, RadioVIL preserves authentic physical textures, yielding the best LPIPS of 0.0587 in our evaluation. Uniquely, it unlocks accurate zero-shot vehicle localization directly from sparse radio maps, securing a 75.20% Recall and a 3.31-meter average error, paving a robust way for ISAC at the 6G edge.",
-    "published_date": "2026-08-17",
-    "updated_date": "2026-08-17",
-    "primary_category": "eess.SP",
-    "categories": [
-      "eess.SP",
-      "cs.LG"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2608.16167v1",
-    "comment": "6 pages, 4 figures, 2 tables. Accepted to IEEE GLOBECOM 2026, Wireless Communications Symposium"
-  },
-  {
     "arxiv_id": "2610.03600",
     "title": "Learning-Based Beam Adaptation for Active/Passive-Aware Monopulse ISAC with Leakage Suppression",
     "authors": [
@@ -6683,6 +6565,52 @@
     ],
     "pdf_url": "https://arxiv.org/pdf/2609.03147v1",
     "comment": "Accepted to the 17th ACM Workshop on Wireless of the Students, by the Students, for the Students (S3 '26) at MobiCom 2026. 4 pages, 3 figures"
+  },
+  {
+    "arxiv_id": "2608.25477",
+    "title": "AERIS: Offline Policy Improvement for Multi-UAV Integrated Sensing and Communication",
+    "authors": [
+      "Ziyuan Wang",
+      "Yifan Sui",
+      "Wei Wei",
+      "Wenjie Xin",
+      "Zekai Zhang",
+      "Xiangwang Hou",
+      "Xiao-Ping",
+      "Zhang"
+    ],
+    "abstract": "Unmanned aerial vehicle (UAV)-enabled integrated sensing and communication (ISAC) is a promising 6G paradigm, but dynamic multi-UAV ISAC control must jointly balance communication quality, sensing reliability, and flight safety under stochastic mobility. Existing optimization methods often require repeated global non-convex solving, while online reinforcement learning (RL) depends on risky trial-and-error flights that may cause sensing loss or collision-risk events. This paper proposes AERIS, an offline policy improvement framework for multi-UAV ISAC. AERIS learns from fixed flight logs under centralized training and decentralized execution, so each UAV acts from local histories while training uses logged global information to assess team-level effects. We further design STAR-CRDT, an offline multi-agent RL algorithm that performs support-aware local action rectification and distills only trusted improvements into the decentralized actor. We prove an offline-support policy improvement guarantee. Experiments show that STAR-CRDT improves the main ISAC objective return by 29.3% over the strongest baseline. It further improves communication sum rate, sensing pass rate, and sensing margin by 3.4%, 4.8%, and 69.1%, while reducing collision-risk events by 54.2%. On unseen real-road maps built from OpenStreetMap data, STAR-CRDT still obtains the best return.",
+    "published_date": "2026-08-26",
+    "updated_date": "2026-08-26",
+    "primary_category": "cs.NI",
+    "categories": [
+      "cs.NI",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2608.25477v1",
+    "comment": ""
+  },
+  {
+    "arxiv_id": "2608.16167",
+    "title": "RadioVIL: Anomaly-Aware Diffusion Models for Radio Map Inpainting and Zero-Shot Vehicle Localization",
+    "authors": [
+      "Ruixin Zhao",
+      "Xiucheng Wang",
+      "Qiming Zhang",
+      "Nan Cheng",
+      "Ruijin Sun",
+      "Conghao Zhou"
+    ],
+    "abstract": "High-precision radio map construction is essential for emerging 6G Integrated Sensing and Communication (ISAC) applications, including digital twins and intelligent transportation. However, existing deep learning methods predominantly treat this as a pure image completion task, resulting in over-smoothed reconstructions that fundamentally erase high-frequency scattering signatures of dynamic physical entities such as hidden vehicles. To overcome this, we propose RadioVIL, an efficient two-stage framework that reformulates joint radio map inpainting and zero-shot vehicle localization as a prior-guided physical inverse problem. Specifically, we first train a Denoising Diffusion Probabilistic Model (DDPM) to capture the structural generative prior of the environment. During inference from highly sparse measurements, we employ a Diffusion-based Mediating Intermediate Layer Optimization (DMILO) algorithm. By optimizing an L1-regularized sparse deviation term, DMILO mathematically isolates vehicle scattering anomalies layer-by-layer without unfolding the entire denoising chain. Extensive experiments demonstrate that while conventional reconstruction baselines fail to detect hidden vehicles, and the zero-shot diffusion baseline achieves only limited detection ability due to forced semantic harmonization, RadioVIL preserves authentic physical textures, yielding the best LPIPS of 0.0587 in our evaluation. Uniquely, it unlocks accurate zero-shot vehicle localization directly from sparse radio maps, securing a 75.20% Recall and a 3.31-meter average error, paving a robust way for ISAC at the 6G edge.",
+    "published_date": "2026-08-17",
+    "updated_date": "2026-08-17",
+    "primary_category": "eess.SP",
+    "categories": [
+      "eess.SP",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2608.16167v1",
+    "comment": "6 pages, 4 figures, 2 tables. Accepted to IEEE GLOBECOM 2026, Wireless Communications Symposium"
   },
   {
     "arxiv_id": "2607.19609",
@@ -7109,63 +7037,6 @@
     "comment": ""
   },
   {
-    "arxiv_id": "2601.20654",
-    "title": "RL based Beamforming Optimization for 3D Pinching Antenna assisted ISAC Systems",
-    "authors": [
-      "Qian Gao",
-      "Ruikang Zhong",
-      "Yue Liu",
-      "Hyundong Shin",
-      "Yuanwei Liu"
-    ],
-    "abstract": "In this paper, a three-dimensional (3D) deployment scheme of pinching antenna array is proposed, aiming to enhances the performance of integrated sensing and communication (ISAC) systems. To fully realize the potential of 3D deployment, a joint antenna positioning, time allocation and transmit power optimization problem is formulated to maximize the sum communication rate with the constraints of target sensing rates and system energy. To solve the sum rate maximization problem, we propose a heterogeneous graph neural network based reinforcement learning (HGRL) algorithm. Simulation results prove that 3D deployment of pinching antenna array outperforms 1D and 2D counterparts in ISAC systems. Moreover, the proposed HGRL algorithm surpasses other baselines in both performance and convergence speed due to the advanced observation construction of the environment.",
-    "published_date": "2026-01-28",
-    "updated_date": "2026-01-28",
-    "primary_category": "eess.SP",
-    "categories": [
-      "eess.SP"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2601.20654v1",
-    "comment": ""
-  },
-  {
-    "arxiv_id": "2601.15145",
-    "title": "Weather Estimation for Integrated Sensing and Communication",
-    "authors": [
-      "Victoria Palhares",
-      "Artjom Grudnitsky",
-      "Silvio Mandelli"
-    ],
-    "abstract": "One of the key features of sixth-generation (6G) mobile communications will be integrated sensing and communication (ISAC). While the main goal of ISAC in standardization efforts is to detect objects, the byproducts of radar operations can be used to enable new services in 6G, such as weather sensing. Even though weather radars are the most prominent technology for weather detection and monitoring, they are expensive and usually neglect areas in close vicinity. To this end, we propose reusing the dense deployment of 6G base stations for weather sensing purposes by detecting and estimating weather conditions. We implement both a classifier and a regressor as a convolutional neural network trained across measurements with varying precipitation rates and wind speeds. We implement our approach in an ISAC proof-of-concept and conduct a multi-week experiment campaign. Experimental results show that we are able to jointly and accurately classify weather conditions with accuracies of 99.38% and 98.99% for precipitation rate and wind speed, respectively. For estimation, we obtain mean absolute errors of 1.2 mm/h and 1.5 km/h, for precipitation rate and wind speed, respectively. These findings indicate that weather sensing services can be reliably deployed in 6G ISAC networks, broadening their service portfolio and boosting their market value.",
-    "published_date": "2026-01-21",
-    "updated_date": "2026-07-22",
-    "primary_category": "eess.SP",
-    "categories": [
-      "eess.SP"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2601.15145v3",
-    "comment": "Presented at the 2026 EuCNC & 6G Summit"
-  },
-  {
-    "arxiv_id": "2601.15113",
-    "title": "Physics-Informed Implicit Neural Representation for Wireless Imaging in RIS-Aided ISAC System",
-    "authors": [
-      "Yixuan Huang",
-      "Jie Yang",
-      "Chao-Kai Wen",
-      "Shi Jin"
-    ],
-    "abstract": "Wireless imaging has become a vital function in future integrated sensing and communication (ISAC) systems. However, traditional model-based and data-driven deep learning imaging methods face challenges related to multipath extraction, dataset acquisition, and multi-scenario adaptation. To overcome these limitations, this study innovatively combines implicit neural representation (INR) with explicit physical models to realize wireless imaging in reconfigurable intelligent surface (RIS)-aided ISAC systems. INR employs neural networks (NNs) to project physical locations to voxel values, which is indirectly supervised by measurements of channel state information with physics-informed loss functions. The continuous shape and scattering characteristics of targets are embedded into NN parameters through training, enabling arbitrary image resolutions and off-grid voxel value prediction. Additionally, three issues related to INR-based imager are further addressed. First, INR is generalized to enable efficient imaging under multipath interference by jointly learning image and multipath information. Second, the imaging speed and accuracy for dynamic targets are enhanced by embedding prior image information. Third, imaging results are employed to assist in RIS phase design for improved communication performance. Extensive simulations demonstrate that the proposed INR-based imager significantly outperforms traditional model-based methods with super-resolution abilities, and the focal length characteristics of the imaging system is revealed. Moreover, communication performance can benefit from the imaging results. Part of the source code for this paper can be accessed at https://github.com/kiwi1944/INRImager",
-    "published_date": "2026-01-21",
-    "updated_date": "2026-02-12",
-    "primary_category": "cs.IT",
-    "categories": [
-      "cs.IT"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2601.15113v2",
-    "comment": "accepted by IEEE TWC"
-  },
-  {
     "arxiv_id": "2609.27527",
     "title": "An Operational Leakage Metric for Eavesdropping in Joint Sensing and Communications Systems",
     "authors": [
@@ -7281,6 +7152,25 @@
     "comment": "Accepted by IEEE Communications Magazine"
   },
   {
+    "arxiv_id": "2606.21677",
+    "title": "Adaptive 5G Resource Allocation for Multistatic ISAC-Based UAV Detection and Tracking",
+    "authors": [
+      "Cole Dickerson",
+      "Wahab Khawaja",
+      "Ismail Guvenc"
+    ],
+    "abstract": "Unmanned aerial vehicles (UAVs) enable numerous commercial and public-safety applications, yet they also create security risks near critical infrastructure, transportation hubs, and restricted airspace. While integrated sensing and communications (ISAC) can leverage existing wireless networks for UAV surveillance, practical deployment must address competition between sensing and communication demands, as well as the challenges associated with tracking highly maneuverable UAVs with low radar cross section (RCS). This paper investigates adaptive multistatic ISAC for load-aware UAV detection and tracking in 5G wireless networks. A shared-resource framework is developed to quantify how sensing waveform length, sensing transmission rate, and beam allocation affect communication throughput in a 5G new radio (NR) system. Detection performance is analyzed using Zadoff-Chu (ZC) sensing waveforms, while tracking continuity is evaluated through an M-of-N detection model. To improve robustness under congestion, software-defined sensor (SDS) nodes exploit external signals of opportunity (SoO) to provide supplemental passive sensing opportunities when network resources become limited. Results show that adaptive sensing policies outperform fixed sensing reservations by preserving throughput under dynamic load while maintaining useful sensing capability. Under heavy congestion, SDS assistance substantially reduces tracking outage in the simulated scenarios. Cramer-Rao lower bound (CRLB) analysis demonstrates that multistatic sensing geometries improve localization accuracy and provide more uniform spatial coverage than monostatic sensing alone. These results highlight coordinated adaptive sensing and distributed multistatic support as a practical path toward resilient UAV surveillance in future wireless networks.",
+    "published_date": "2026-06-19",
+    "updated_date": "2026-06-19",
+    "primary_category": "eess.SP",
+    "categories": [
+      "eess.SP",
+      "eess.SY"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.21677v1",
+    "comment": "Accepted for publication in the Proceedings of the IEEE/AIAA 45th Digital Avionics Systems Conference (DASC 2026). 10 pages, 9 figures"
+  },
+  {
     "arxiv_id": "2606.19146",
     "title": "Ray Antenna Array Enhanced Low-Altitude ISAC: Performance Analysis and Beamforming Design",
     "authors": [
@@ -7339,85 +7229,6 @@
     ],
     "pdf_url": "https://arxiv.org/pdf/2606.13582v1",
     "comment": ""
-  },
-  {
-    "arxiv_id": "2606.07104",
-    "title": "Robust Secure Beamforming for Movable Antenna Enhanced Integrated Sensing and Communications",
-    "authors": [
-      "Yuan Chen",
-      "Ning Wei",
-      "Ahmad Bazzi",
-      "Xiangyu Dong",
-      "Ran Yang",
-      "You Li",
-      "Yue Xiu"
-    ],
-    "abstract": "In this letter, we investigate robust beamforming design for a movable antenna (MA)-enhanced secure integrated sensing and communications (ISAC) system with imperfect eaves?dropping channel state information (CSI). To improve radar sensing performance, we formulate a radar signal-to-interference?plus-noise ratio (SINR) maximization problem by jointly opti?mizing the transmit beamforming and antenna placement while ensuring communication data security. However, the resulting op?timization problem is inherently intractable due to the nonlinea mapping from antenna positions to channel coefficients, as well as the eavesdropper (Eve) channel uncertainty. To handle these challenges, we propose a block coordinate descent (BCD)-based algorithm incorporating successive convex approximation (SCA) and fractional programming (FP) techniques. Simulation results show that our proposed algorithm exhibits fast convergence and achieves a significant improvement in the radar SINR while guaranteeing communication security.",
-    "published_date": "2026-06-05",
-    "updated_date": "2026-06-05",
-    "primary_category": "eess.SP",
-    "categories": [
-      "eess.SP"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2606.07104v1",
-    "comment": ""
-  },
-  {
-    "arxiv_id": "2606.03960",
-    "title": "SNF-PRP: A Covert Integrating Sensing and Communications Framework",
-    "authors": [
-      "Dhrumil Bhatt",
-      "Vidushi Kumar"
-    ],
-    "abstract": "Integrated sensing and communication (ISAC) enables simultaneous sensing and data transmission but exposes a critical vulnerability: probing signals may be intercepted, revealing both the transmitted information and the act of sensing itself. Existing physical layer security approaches mitigate interception yet operate with detectable signals, leaving sensing activity observable to a passive warden. This paper introduces sub-noise-floor pseudo-random probing (SNF-PRP), a covert sensing framework for OFDM-based ISAC systems under an energy-detection adversary model. SNF-PRP establishes an $ε$-covertness guarantee via Kullback-Leibler (KL) divergence, exploits an $N_{\\mathrm{sc}}$-fold spreading gain absent from prior wideband analyses, and derives in closed form the minimum integration length required to achieve a target Cramér-Rao bound (CRB). Simulations under 5G~NR n78 numerology confirm sub-0.5\\,m range and sub-0.5\\,m/s velocity accuracy with KL divergence $5.8\\times$ below the covertness threshold, validating joint feasibility at $-12$\\,dB and $-15$\\,dB probing powers.",
-    "published_date": "2026-06-02",
-    "updated_date": "2026-06-05",
-    "primary_category": "eess.SP",
-    "categories": [
-      "eess.SP"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2606.03960v2",
-    "comment": ""
-  },
-  {
-    "arxiv_id": "2606.03690",
-    "title": "On Secure EKF-enhanced UAV-ISAC Systems",
-    "authors": [
-      "Hongjiang Lei",
-      "Heng Jin",
-      "Ki-Hong Park",
-      "Jia Ye",
-      "Liang Yang",
-      "Gaofeng Pan",
-      "Yun Li"
-    ],
-    "abstract": "Integrated sensing and communication (ISAC) has emerged as a promising key technology for future wireless networks, enabling the efficient coordination of sensing and communication functions within limited resources. This work investigates a secure ISAC system assisted by an uncrewed aerial vehicle (UAV). By incorporating the extended Kalman filter (EKF), the proposed system is capable of delivering communication services to legitimate users while simultaneously jamming eavesdroppers and performing joint prediction and tracking of the trajectories of both legitimate and illegitimate users. Considering practical constraints such as {sensing beamwidth}, transmit power, and UAV's propulsion energy consumption, the secrecy rate is maximized through the joint design of transmit beamforming and UAV trajectory. To tackle the resulting highly non-convex optimization problem, an efficient iterative algorithm is developed by integrating block coordinate descent, successive convex approximation, and EKF, thereby yielding a high-quality suboptimal solution. Extensive simulation results validate the superior performance of the proposed scheme compared to benchmarks.",
-    "published_date": "2026-06-02",
-    "updated_date": "2026-06-02",
-    "primary_category": "cs.IT",
-    "categories": [
-      "cs.IT"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2606.03690v1",
-    "comment": "13 pages, 6 figures, submitted to IEEE Journal for review"
-  },
-  {
-    "arxiv_id": "2606.03372",
-    "title": "Instantaneous Risk Minimization for Secure Integrated Sensing and Communication",
-    "authors": [
-      "Chao Ge",
-      "Na Zhao",
-      "Yuan Shen"
-    ],
-    "abstract": "To ensure worst-case physical layer security, this paper proposes a robust beamforming framework for secure integrated sensing and communication (ISAC) systems. Different from conventional designs that focus on maximizing the ergodic secrecy rate, the proposed method aims to minimize instantaneous information leakage risk. We formulate a multi-objective optimization problem that jointly suppresses the worst-case eavesdropper signal-to-interference-plus-noise ratio (SINR), improving sensing accuracy, and ensuring the quality of service (QoS) for legitimate users. To address the resulting non-convex problem, we develop a hierarchical iterative algorithm, in which the outer loop refines the continuous uncertainty regions based on the updated sensing performance, and the inner loop optimizes beamforming under the refined uncertainty regions. Theoretical analysis and simulation results demonstrate that the proposed method achieves per-transmission security guarantees with practical complexity.",
-    "published_date": "2026-06-02",
-    "updated_date": "2026-06-03",
-    "primary_category": "eess.SP",
-    "categories": [
-      "eess.SP"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2606.03372v2",
-    "comment": "To appear in IEEE International Conference on Communications, Glasgow, Scotland, UK, May, 2026"
   },
   {
     "arxiv_id": "2609.18305",
@@ -7479,13 +7290,37 @@
     ],
     "abstract": "6G networks will introduce unprecedented complexity, which calls for a paradigm shift in network optimization and management. Artificial intelligence (AI)-based solutions, especially those enabled by the recently developed foundation models, have been recognized as promising candidates. Foundation models are large-scale AI models with general-purpose feature extraction capabilities, and once trained on massive amounts of data, they can be adapted to solve a wide range of downstream tasks, either in a zero-shot manner or with few-shot fine-tuning. This article provides a comprehensive overview of how foundation models are reshaping physical-layer processing and wireless resource management across three progressive paradigms. First, we examine the adaptation of off-the-shelf pre-trained foundation models to various wireless tasks. Second, we explore wireless-native foundation models, built from scratch on wireless data to bridge cross-domain modality gaps and capture universal wireless-domain physical characteristics. Third, we highlight agentic foundation models, which elevate static data processing into autonomous, reasoning-driven network orchestration. Furthermore, we discuss the impact of applying foundation models to emerging 6G frontiers, including integrated sensing and communications (ISAC), new multiple-input multiple-output (MIMO) architectures, semantic communications, and system-level network autonomy. Finally, we identify critical open challenges and opportunities, charting a promising path toward fully intelligent and adaptive wireless networks.",
     "published_date": "2026-06-04",
-    "updated_date": "2026-10-08",
+    "updated_date": "2026-10-21",
     "primary_category": "eess.SP",
     "categories": [
       "eess.SP"
     ],
-    "pdf_url": "https://arxiv.org/pdf/2606.06239v2",
-    "comment": "22 pages"
+    "pdf_url": "https://arxiv.org/pdf/2606.06239v3",
+    "comment": "23pages"
+  },
+  {
+    "arxiv_id": "2604.05797",
+    "title": "Near-Field Integrated Sensing, Computing and Semantic Communication in Digital Twin-Assisted Vehicular Networks",
+    "authors": [
+      "Yinchao Yang",
+      "Yahao Ding",
+      "Jiaxiang Wang",
+      "Zhaohui Yang",
+      "Chen Zhu",
+      "Zhaoyang Zhang",
+      "Dusit Niyato",
+      "Mohammad Shikh-Bahaei"
+    ],
+    "abstract": "Digital twin (DT) technology offers transformative potential for vehicular networks, enabling high-fidelity virtual representations for enhanced safety and automation. However, seamless DT synchronization in dynamic environments faces challenges such as massive data transmission, precision sensing, and strict computational constraints. This paper proposes an integrated sensing, computing, and semantic communication (ISCSC) framework tailored for DT-assisted vehicular networks in the near-field (NF) regime. Leveraging a multi-user multiple-input multiple-output (MU-MIMO) configuration, each roadside unit (RSU) employs semantic communication to serve vehicles while simultaneously utilizing millimeter-wave (mmWave) radar for environmental mapping. We implement particle filtering at RSUs to achieve high-precision vehicle tracking. To optimize performance, we formulate a joint optimization problem balancing semantic communication rates and sensing accuracy under limited computational resources and power budget. Our solution includes a hybrid heuristic algorithm for vehicle-to-RSU assignment and an alternating optimization approach for determining semantic extraction ratios and beamforming matrices. Performance is extensively evaluated via the Cramér-Rao bound (CRB) for angle and distance estimation, semantic transmission rates, and resource utilization. Numerical results demonstrate that the proposed ISCSC framework achieves a 20% improvement in transmission rate while maintaining the sensing accuracy of existing integrated sensing and communication (ISAC) schemes under constrained resource conditions.",
+    "published_date": "2026-04-07",
+    "updated_date": "2026-04-07",
+    "primary_category": "cs.IT",
+    "categories": [
+      "cs.IT",
+      "eess.SP"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.05797v1",
+    "comment": "Accepted by IEEE Transactions on Vehicular Technology"
   },
   {
     "arxiv_id": "2601.12827",
@@ -7800,6 +7635,26 @@
     ],
     "pdf_url": "https://arxiv.org/pdf/2608.08731v1",
     "comment": "13 pages, 9 figures"
+  },
+  {
+    "arxiv_id": "2608.01854",
+    "title": "Movable Subarray-Aided ISAC in Hybrid Near-Far Field Channels",
+    "authors": [
+      "Ruiqi Liu",
+      "Yuanshuo Gang",
+      "Honghao Wang",
+      "Tianqi Mao"
+    ],
+    "abstract": "This letter investigates an integrated sensing and communication (ISAC) system aided by movable subarrays (MSAs) using a hybrid near-far field channel model. The sensing target and communication users are assumed to lie in the near field of the overall MSA aperture but in the far-field region of each subarray. Accordingly, a hybrid near-far field channel model is established, and the equivalent Fisher information matrix and Cramér-Rao bound (CRB) for joint range, elevation, and azimuth estimation are derived. The transmit beamforming matrix and subarray positions are jointly optimized to minimize the trace CRB subject to minimum communication signal-to-interference-plus-noise ratio (SINR), maximum transmit power and subarray movement constraints. An alternating optimization algorithm is developed combining iterative rank-one-penalized semidefinite relaxation with projected finite-difference block descent and backtracking. Numerical results show that the hybrid-field model closely matches the spherical-wave model, while MSAs substantially reduce the CRB.",
+    "published_date": "2026-08-03",
+    "updated_date": "2026-08-03",
+    "primary_category": "cs.IT",
+    "categories": [
+      "cs.IT",
+      "eess.SP"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2608.01854v1",
+    "comment": ""
   },
   {
     "arxiv_id": "2606.12870",
